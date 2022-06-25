@@ -6,11 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Normalize CSS -->
+	  <link rel="stylesheet" href="./css/normalize.css">    
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- Malihu jQuery custom content scroller CSS -->
+	  <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">    
+    <!-- Confirm -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <!-- MaterialDark CSS -->
+	  <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/validetta.css">
 
-    <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/49f2039b91.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        
@@ -56,8 +66,18 @@
     <?php include("./html/comunes/lateral.html"); ?>
   </section>
   
+<!-- Page content -->
+<section class="ContentPage full-width">
+        
 
-    <h1>Hola</h1>
+        <!--Content-->
+        <div class="row">
+            <?php include("index.html");?>
+        </div>
+
+
+       
+    </section>
 
 
   <!--Footer-->
@@ -94,13 +114,28 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script src="./js/index.js"></script>
+    <!--  Alert JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <!-- jQuery  -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	  <script>window.jQuery || document.write('<script src="./../../js/jquery-2.2.0.min.js"><\/script>')</script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    <!-- Malihu jQuery custom content scroller JS -->
+	  <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>  
+    <!-- MaterialDark JS  -->
+	  <script src="./js/main.js"></script>
 
+    <script src="./js/validetta101/dist/validetta.js" defer></script>
+    <script src="./js/validetta101/dist/validetta.min.js" defer></script>
+    <script src="./js/validetta101/localization/validettaLang-es-ES.js" defer></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  
-
 </body>
 </html>
