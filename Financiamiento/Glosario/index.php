@@ -7,7 +7,7 @@
     <title>Bienvenido</title>
 
     <!-- Normalize CSS -->
-	  <link rel="stylesheet" href="./css/normalize.css">    
+	  <link rel="stylesheet" href="./../../css/normalize.css">    
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
     <!-- Iconos -->
@@ -33,7 +33,7 @@
     <nav class="cyan darken-4">
       <div class="row">
         <div class="col l2 m2 s2 center">
-            <img src="./assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" width="43%">
+            <img src="./../../assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" width="43%">
         </div>
         <div class="col l8 m8 s8">
           <div class="nav-wrapper">
@@ -44,12 +44,11 @@
           </div>
         </div>
         <div class="col l2 m2 s2 center">
-          <img src="./assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoIPN" width="37%">
+          <img src="./../../assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoIPN" width="37%">
         </div>
       </div>
     </nav> 
-    </div>
-    
+    </div>   
 
     </header>
    
@@ -110,7 +109,7 @@
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
     <!-- Malihu jQuery custom content scroller JS -->
-	  <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>  
+	  <script src="./../../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
 	  <script src="./../../js/index.js"></script>
 
