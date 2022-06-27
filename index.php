@@ -38,7 +38,6 @@
         <div class="col l8 m8 s8">
           <div class="nav-wrapper">
             <a href="http://localhost/servicio/" class="brand-logo"><i class="fa-solid fa-house-chimney fa-2x"></i></a>
-            <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="http://localhost/TT2/Conocenos.php">Conócenos</a></li>
             </ul>
@@ -50,30 +49,20 @@
       </div>
     </nav> 
     </div>
-    <ul class="sidenav" id="mobile-demo">
-          <li><a href="http://localhost/TT2/Conocenos.php">Conócenos</a></li>
-          <li><a href="http://localhost/TT2/evaluacion/login.html">Log in</a></li>
-          <li><a href="http://localhost/TT2/evaluacion/cuenta/">Crear cuenta</a></li>
-          
-    </ul> 
+    
 
     </header>
    
-  
-    
-  
-<!-- Page content -->
-<section class="ContentPage full-width">
-        
+  <div class="row">
 
-        <!--Content-->
-        <div class="row">
-            <?php include("index.html");?>
-        </div>
+  </div>  
+  <div class="row ">
+    <?php include("index.html");?>
+  </div>
+      
 
 
        
-    </section>
 
 
   <!--Footer-->
@@ -123,7 +112,7 @@
     <!-- Malihu jQuery custom content scroller JS -->
 	  <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
-	  <script src="./js/main.js"></script>
+	  <script src="./js/index.js"></script>
 
     <script src="./js/validetta101/dist/validetta.js" defer></script>
     <script src="./js/validetta101/dist/validetta.min.js" defer></script>
