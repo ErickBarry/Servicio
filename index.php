@@ -59,12 +59,8 @@
 
     </header>
    
-  <!--MENU--> 
   
-  <!-- Nav Lateral -->
-  <section class="NavLateral">
-    <?php include("./html/comunes/lateral.html"); ?>
-  </section>
+    
   
 <!-- Page content -->
 <section class="ContentPage full-width">
