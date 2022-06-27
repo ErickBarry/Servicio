@@ -1,20 +1,5 @@
 $(document).ready(function(){
     //Cambiar el nombre del usuario
-    /*$.ajax({
-        method:"post",
-        // peticion ajax 
-        url:"http://localhost/TT2/evaluacion/pages/nombreUsr.php",
-        cache:false,
-        //proceso de respuesta
-        success:function(respAX){
-        var respJson=JSON.parse(respAX);
-        if(respJson.codigo==1)
-        {
-            var dato=document.getElementById('nomli');
-            dato.innerHTML=respJson.nombre;
-        }
-        }
-    });*/
 
     $('.NavLateral-DropDown').on('click', function(e){
         e.preventDefault();
