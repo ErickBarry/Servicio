@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //Cambiar el nombre del usuario
+    $(".button-collapse").sideNav();
 
     $('.NavLateral-DropDown').on('click', function(e){
         e.preventDefault();

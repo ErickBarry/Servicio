@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <!-- MaterialDark CSS -->
 	<link rel="stylesheet" href="./../css/style.css">
+    <!--version Materialize to collapsible menu--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 </head>
 <body>
      <!-- Nav Lateral -->
@@ -43,7 +45,7 @@
         </footer>
     
     <!--  Alert JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js" defer></script>
     <!-- jQuery  -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="./../js/jquery-2.2.0.min.js"><\/script>')</script>
@@ -52,23 +54,13 @@
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
-	<script src="./../js/main.js"></script>
-  <script src="./../js/index.js"></script>
-  <script>
-       document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  });
+	<script src="./main.js"></script>
+    <script src="./index.js"></script>
+    <!--version Materialize to collapsible menu--> 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    
 
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
   </script>
 </body>
 </html>
