@@ -37,7 +37,7 @@
         </div>
         <!--Content-->
         <div class="row teal lighten-3">
-            <?php include("index.html");?>
+            <?php include("bienvenida.html");?>
         </div>
         <!-- Footer -->   
         <footer class="footer-MaterialDark grey darken-4">
@@ -55,7 +55,6 @@
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
 	<script src="./main.js"></script>
-    <script src="./index.js"></script>
     <!--version Materialize to collapsible menu--> 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
