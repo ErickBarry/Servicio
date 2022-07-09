@@ -49,7 +49,7 @@
         </footer>
     </section>
     <!--  Alert JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js" defer></script>
     <!-- jQuery  -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="./js/jquery-2.2.0.min.js"><\/script>')</script>
@@ -59,6 +59,8 @@
 	<script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
 	<script src="./js/main.js"></script>
+
+
   <script src="./js/index.js"></script>
 </body>
 </html>
