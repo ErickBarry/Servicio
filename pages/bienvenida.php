@@ -27,17 +27,17 @@
 <body>
      <!-- Nav Lateral -->
    
-        <?php include("./../inicio/lateral.html"); ?>
+        <?php include("./../html/comunes/lateral.html"); ?>
     
     <!-- Page content -->
     
         <!-- Nav Info -->
         <div class="ContentPage-Nav full-width">
-           <?php include("./../inicio/nav.html"); ?>       
+           <?php include("./../html/comunes/nav.html"); ?>       
         </div>
         <!--Content-->
         <div class="row">
-            <?php include("introduccion.html");?>
+            <?php include("bienvenida.html");?>
         </div>
         <!-- Footer -->   
         <footer class="footer-MaterialDark grey darken-4">
@@ -54,7 +54,7 @@
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
-	<script src="./../inicio/main.js"></script>
+	<script src="./../js/main.js"></script>
     <!--version Materialize to collapsible menu--> 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
