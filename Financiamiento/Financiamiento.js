@@ -1,5 +1,3 @@
-/*$('#delete').addClass('disabled');
-$('#update').addClass('disabled');*/
 $(document).ready(function() {
 
     //Para llenar los campos del select
