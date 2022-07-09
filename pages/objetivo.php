@@ -24,17 +24,23 @@
     <!--version Materialize to collapsible menu--> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 </head>
-<body>
+<body class="stretched sticky-responsive-menu" data-loader="7">
      <!-- Nav Lateral -->
-   
+    <section class="NavLateral full-width">
         <?php include("./../html/comunes/lateral.html"); ?>
-    
+    </section>
     <!-- Page content -->
-    
+    <section class="ContentPage full-width ">
         <!-- Nav Info -->
         <div class="ContentPage-Nav full-width">
            <?php include("./../html/comunes/nav.html"); ?>       
         </div>
+        <!-- Notifications area -->
+        <section class="z-depth-3 NotificationArea">
+            <?php include("./../html/comunes/notification.html"); ?>      
+        </section>
+
+
         <!--Content-->
         <div class="row">
             <?php include("objetivo.html");?>
@@ -43,7 +49,6 @@
         <footer class="footer-MaterialDark grey darken-4">
              <?php include("./../html/comunes/footer.html"); ?> 
         </footer>
-    
     <!--  Alert JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js" defer></script>
     <!-- jQuery  -->
