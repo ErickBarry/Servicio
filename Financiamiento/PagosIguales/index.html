@@ -1,0 +1,251 @@
+<div class="conatiner">
+    <div class="row">
+        <h3 class="center">Pagos iguales</h3>
+    </div>
+    <div class="row">
+        <div class="col s12 m10 l10 offset-l1">
+            <form id="formAdd" autocomplete="off" method="POST">
+                <div class="row">
+        
+                  <div class="col l6 s6 m6 center input-field">
+                    <i class="fas fa-sack-dollar prefix"></i>
+                    <label for="pre">¿Con cuánto dinero cuentas?</label>
+                    <input type="number" placeholder="$20,000" step="any" min="0"  id="montoNecesitado"
+                      name="montoNecesitado" data-validetta="required">
+                  </div>
+                  <div class="col l6 s6 m6 center input-field">
+                    <i class="fas fa-coins prefix"></i>
+                    <label for="pre">¿Quién te presta?</label>
+                    <input type="text" placeholder="Banco/familiar" step="any" id="prestamista"
+                      name="prestamista" data-validetta="required">
+                  </div>
+        
+                </div>
+        
+                <div class="row">
+                  <div class="col l6 s6 m6 center input-field">
+                    <i class="fas fa-coins prefix"></i>
+                    <label for="pre">Tasa de interés anual</label>
+                    <input type="number" placeholder="15%" step="any" min="1" max="100" id="interesMensual"
+                      name="interesMensual" data-validetta="required">
+                  </div>
+                  <!--<div class="col l6 s6 m6 center input-field">
+                    <i class="fas fa-calendar prefix"></i>
+                    <label for="pre">Número de meses</label>
+                    <input type="number" placeholder="12" step="any" min="1" id="meses" name="meses"
+                      data-validetta="required">
+                  </div>-->
+
+                  <div class="col l3 m3 s3 center left input-field">
+                    <i class="fas fa-calendar prefix"></i>
+                    <label for="pre">Número de periodos</label>
+                    <input type="number" placeholder="12" step="any" min="1" id="meses" name="meses"
+                      data-validetta="required">
+                  </div>
+                  <div class="col l2 m2 s2 left input-field">
+                    <p>
+                        <label>
+                          <input name="group1" type="radio" checked />
+                          <span>Días</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="group1" type="radio" />
+                          <span>Semanas</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="group1" type="radio"  />
+                          <span>Años</span>
+                        </label>
+                      </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col l12 m12 s12">
+                    <button type="submit" class="waves-effect waves-light btn">Calcular<i
+                          class="material-icons right">add_circle_outline</i></button>
+
+
+                  </div>        
+                </div>
+        
+        
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l10 offset-l1">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Amortización de anualidades vencidas (Pago iguales)</div>
+                    <div class="collapsible-body">
+                        <span>
+                          <div class="row">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type 
+                                specimen book. It has survived not only five centuries, but also the leap into 
+                                electronic typesetting, remaining essentially unchanged. It was popularised in the 
+                                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                                recently with desktop publishing software like Aldus PageMaker including versions of
+                                 Lorem Ipsum.
+                            </p>
+                          </div>
+                            <div class="row">
+                                <div class="col s12 l12 m12 centered" id="division">
+                                    <table class="highlight centered responsive-table " id="Tabla" data-page-length='10'>
+                                        <thead>
+                                          <tr>
+                                            <th># pago</th>
+                                           <!--<th>Fecha</th>--> 
+                                            <th>Saldo inicial</th>
+                                            <th>Pago mensual</th>
+                                            <th>Monto intereses</th>
+                                            <th>Pago a capital</th>
+                                          </tr>
+                                        </thead>
+                            
+                                    </table>    
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Pago de capital e intereses al finalizar el periodo del prestamos</div>
+                    <div class="collapsible-body">
+                        <span>
+                            <div class="row">
+                                <div class="col s12 l12 m12 centered" id="division">
+                                    <table class="highlight centered responsive-table " id="Tabla2" data-page-length='10'>
+                                        <thead>
+                                          <tr>
+                                            <th># pago</th>
+                                           <!--<th>Fecha</th>--> 
+                                            <th>Saldo inicial</th>
+                                            <th>Pago mensual</th>
+                                            <th>Monto intereses</th>
+                                            <th>Pago a capital</th>
+                                          </tr>
+                                        </thead>
+                            
+                                    </table>    
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Pago de intereses al final de cada periodo y pago del principal al final del plazo</div>
+                    <div class="collapsible-body">
+                        <span>
+                          <div class="row">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type 
+                                specimen book. It has survived not only five centuries, but also the leap into 
+                                electronic typesetting, remaining essentially unchanged. It was popularised in the 
+                                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                                recently with desktop publishing software like Aldus PageMaker including versions of
+                                 Lorem Ipsum.
+                            </p>
+                          </div>
+                            <div class="row">
+                                <div class="col s12 l12 m12 centered" id="division">
+                                    <table class="highlight centered responsive-table " id="Tabla3" data-page-length='10'>
+                                        <thead>
+                                          <tr>
+                                            <th># pago</th>
+                                           <!--<th>Fecha</th>--> 
+                                            <th>Saldo inicial</th>
+                                            <th>Pago mensual</th>
+                                            <th>Monto intereses</th>
+                                            <th>Pago a capital</th>
+                                          </tr>
+                                        </thead>
+                            
+                                    </table>    
+                                </div>
+                            </div>
+                        </span>
+                        
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Pago de intereses y una parte proporcional del principal cada periodo </div>
+                    <div class="collapsible-body">
+                        
+                        <span>
+                          <div class="row">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type 
+                                specimen book. It has survived not only five centuries, but also the leap into 
+                                electronic typesetting, remaining essentially unchanged. It was popularised in the 
+                                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                                recently with desktop publishing software like Aldus PageMaker including versions of
+                                 Lorem Ipsum.
+                            </p>
+                          </div>
+                            <div class="row">
+                                <div class="col s12 l12 m12 centered" id="division">
+                                    <table class="highlight centered responsive-table " id="Tabla4" data-page-length='10'>
+                                        <thead>
+                                          <tr>
+                                            <th># pago</th>
+                                           <!--<th>Fecha</th>--> 
+                                            <th>Saldo inicial</th>
+                                            <th>Pago mensual</th>
+                                            <th>Monto intereses</th>
+                                            <th>Pago a capital</th>
+                                          </tr>
+                                        </thead>
+                            
+                                    </table>    
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Quinto procedimiento </div>
+                    <div class="collapsible-body">
+                        <span>
+                          <div class="row">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type 
+                                specimen book. It has survived not only five centuries, but also the leap into 
+                                electronic typesetting, remaining essentially unchanged. It was popularised in the 
+                                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                                recently with desktop publishing software like Aldus PageMaker including versions of
+                                 Lorem Ipsum.
+                            </p>
+                          </div>
+                            <div class="row">
+                                <div class="col s12 l12 m12 centered" id="division">
+                                    <table class="highlight centered responsive-table " id="Tabla5" data-page-length='10'>
+                                        <thead>
+                                          <tr>
+                                            <th># pago</th>
+                                           <!--<th>Fecha</th>--> 
+                                            <th>Saldo inicial</th>
+                                            <th>Pago mensual</th>
+                                            <th>Monto intereses</th>
+                                            <th>Pago a capital</th>
+                                          </tr>
+                                        </thead>
+                            
+                                    </table>    
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>
