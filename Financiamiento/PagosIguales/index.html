@@ -26,8 +26,8 @@
                   <div class="col l6 s6 m6 center input-field">
                     <i class="fas fa-coins prefix"></i>
                     <label for="pre">Tasa de interés anual</label>
-                    <input type="number" placeholder="15%" step="any" min="1" max="100" id="interesMensual"
-                      name="interesMensual" data-validetta="required">
+                    <input type="number" placeholder="15%" step="any" min="1" max="100" id="interes"
+                      name="interes" data-validetta="required">
                   </div>
                   <!--<div class="col l6 s6 m6 center input-field">
                     <i class="fas fa-calendar prefix"></i>
@@ -43,21 +43,21 @@
                       data-validetta="required">
                   </div>
                   <div class="col l2 m2 s2 left input-field">
-                    <p>
-                        <label>
-                          <input name="group1" type="radio" checked />
-                          <span>Días</span>
-                        </label>
-                      </p>
                       <p>
                         <label>
-                          <input name="group1" type="radio" />
+                          <input name="group1" type="radio" value="Semanas" />
                           <span>Semanas</span>
                         </label>
                       </p>
                       <p>
                         <label>
-                          <input name="group1" type="radio"  />
+                          <input name="group1" type="radio" value="Meses" />
+                          <span>Meses</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="group1" type="radio" value="Anios" />
                           <span>Años</span>
                         </label>
                       </p>
@@ -102,9 +102,10 @@
                                             <th># pago</th>
                                            <!--<th>Fecha</th>--> 
                                             <th>Saldo inicial</th>
-                                            <th>Pago mensual</th>
-                                            <th>Monto intereses</th>
-                                            <th>Pago a capital</th>
+                                            <th>Intereses</th>
+                                            <th>Abono a capital</th>
+                                            <th>Anualidad</th>
+                                            <th>Saldo final</th>
                                           </tr>
                                         </thead>
                             
