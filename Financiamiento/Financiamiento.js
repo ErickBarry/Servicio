@@ -32,6 +32,29 @@ $(document).ready(function(){
                             ]
                         ).draw();
                     }
+                    //Tabla de pago al finalizar el periodo
+                    dataTable2.row.add(
+                        [
+                            respJson.pagoIntFinPeriodo[0]["periodo"],
+                            "$"+respJson.pagoIntFinPeriodo[0]["pagoCapital"],
+                            "$"+respJson.pagoIntFinPeriodo[0]["intereses"],
+                            "$"+respJson.pagoIntFinPeriodo[0]["pagoFinal"]
+                        ]
+                    ).draw();
+                    console.log(respJson.pagoCadaPeriodo);
+                    //Tabla pago de intereses al final de cada periodo
+                    
+                    for(var j=0;j<respJson.pagoCadaPeriodo.length;j++)
+                    {
+                       dataTable3.row.add(
+                            [
+                                respJson.pagoCadaPeriodo[j]["periodo"],
+                                "$"+respJson.pagoCadaPeriodo[j]["intereses"],
+                                "$"+respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"],
+                                "$"+respJson.pagoCadaPeriodo[j]["deudaDespuesPago"]
+                            ]
+                        ).draw();
+                    }
                 }
             });    
         }
@@ -89,4 +112,30 @@ $(document).ready(function(){
         "bFilter":false,
             
         });
+    var dataTable3= $('#Tabla3').DataTable({
+            language: {
+                "emptyTable": "No hay información",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Último",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            },
+            "paging":true,
+            "processing":true,
+            "serverSide":false,
+            "order": [],
+            "info":true,
+            "lengthChange": false,
+            "bFilter":false,
+                
+            });
 });
