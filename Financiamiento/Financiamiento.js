@@ -18,6 +18,106 @@ $(document).ready(function(){
         }
         
     );
+    //Detectar cualquier cambio en el input de la tasa de interes
+    $('#interes').on('input',function()
+    {
+        var valorInt=$('#interes').val();
+
+        if(valorInt>0)//si al menos hay un numero
+        {
+            let tiempo=document.querySelector('input[name=group1]:checked').value;//obtener valor del radiobutton
+            switch(tiempo)
+            {
+                case "Semanas":
+                    {
+                        var TasaEfectiva=(valorInt/100)/52;
+                        //pasar la tasa efectiva con 3 decimales
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Quincenas":
+                    {
+                        var TasaEfectiva=(valorInt/100)/26;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Meses":
+                    {
+                        var TasaEfectiva=(valorInt/100)/12;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Trimestres":
+                    {
+                        var TasaEfectiva=(valorInt/100)/4;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Anios":
+                    {
+                        var TasaEfectiva=valorInt/100;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+            }
+            
+        }
+        else
+        {
+            document.getElementById('tasaEfec').value="";
+        }
+    });
+    //Detectar algun cambio en los radiobutton para la tasa efectiva
+    $('input[name=group1]').on('change',function()
+    {
+        let tiempo=document.querySelector('input[name=group1]:checked').value;//obtener valor del radiobutton
+        
+        var valorInt=$('#interes').val();
+
+        if(valorInt>0)//si al menos hay un numero
+        {
+            let tiempo=document.querySelector('input[name=group1]:checked').value;//obtener valor del radiobutton
+            switch(tiempo)
+            {
+                case "Semanas":
+                    {
+                        var TasaEfectiva=(valorInt/100)/52;
+                        //pasar la tasa efectiva con 3 decimales
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Quincenas":
+                    {
+                        var TasaEfectiva=(valorInt/100)/26;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Meses":
+                    {
+                        var TasaEfectiva=(valorInt/100)/12;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Trimestres":
+                    {
+                        var TasaEfectiva=(valorInt/100)/4;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+                case "Anios":
+                    {
+                        var TasaEfectiva=valorInt/100;
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        break;
+                    }
+            }
+            
+        }
+        else
+        {
+            document.getElementById('tasaEfec').value="";
+        }
+    });
     //Formulario
     $('#formAdd').validetta({
         bubblePosition: 'bottom',
