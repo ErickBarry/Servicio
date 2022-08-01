@@ -1,5 +1,23 @@
 $(document).ready(function(){
-
+    //Iniciar el calendario
+    $('.datepicker').datepicker(
+        {
+            format:"dd/mm/yyyy",//formato de fecha
+            setDefaultDate: false,
+            minDate: new Date(),//para que solo pueda escoger a partir de la fecha de hoy
+            firstDay: 1,//dia en que empieza la semana domingo =0  lunes =1 , etc.
+            disableWeekend: false, //para que se seleccionen o no los fines de semana
+            i18n:{//Poner las fechas en español
+                months:['Enero','Fecbero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                monthsShort:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+                weekdays:['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+                weekdaysShort:['Dom','Lun','Mar','Miérc','Juev','Vier','Sáb'],
+                weekdaysAbbrev:['D','L','M','M','J','V','S'],
+                cancel:'Cancelar',//cambiar el texto 'cancel' por 'cancelar'
+            }
+        }
+        
+    );
     //Formulario
     $('#formAdd').validetta({
         bubblePosition: 'bottom',
@@ -16,14 +34,20 @@ $(document).ready(function(){
                 cache:false,
                 success:function(respAX){
                     dataTable.clear().draw();
+                    dataTable2.clear().draw();
+                    dataTable3.clear().draw();
+                    dataTable4.clear().draw();
+                    dataTable5.clear().draw();
+
                     var respJson = JSON.parse(respAX);
                     //console.log(respJson.data);
                     //Tabla de pagos iguales
-                    for(var i=0;i<respJson.pagosIguales.length;i++)
+                    for(var i=1;i<respJson.pagosIguales.length;i++)
                     {
                        dataTable.row.add(
                             [
                                 respJson.pagosIguales[i]["periodo"],
+                                respJson.fechas[i-1],//las fechas empiezan desde la posicion 0
                                 "$"+respJson.pagosIguales[i]["saldoInicial"],
                                 "$"+respJson.pagosIguales[i]["intereses"],
                                 "$"+respJson.pagosIguales[i]["abonoCap"],
@@ -36,22 +60,57 @@ $(document).ready(function(){
                     dataTable2.row.add(
                         [
                             respJson.pagoIntFinPeriodo[0]["periodo"],
+                            respJson.fechas[respJson.fechas.length-1],//se toma la ultima fecha porque es solo 1 pago
                             "$"+respJson.pagoIntFinPeriodo[0]["pagoCapital"],
                             "$"+respJson.pagoIntFinPeriodo[0]["intereses"],
                             "$"+respJson.pagoIntFinPeriodo[0]["pagoFinal"]
                         ]
                     ).draw();
-                    console.log(respJson.pagoCadaPeriodo);
+
                     //Tabla pago de intereses al final de cada periodo
                     
-                    for(var j=0;j<respJson.pagoCadaPeriodo.length;j++)
+                    for(var j=1;j<respJson.pagoCadaPeriodo.length;j++)
                     {
                        dataTable3.row.add(
                             [
                                 respJson.pagoCadaPeriodo[j]["periodo"],
+                                respJson.fechas[j-1],//las fechas empiezan desde la posicion 0
                                 "$"+respJson.pagoCadaPeriodo[j]["intereses"],
                                 "$"+respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"],
                                 "$"+respJson.pagoCadaPeriodo[j]["deudaDespuesPago"]
+                            ]
+                        ).draw();
+                    }
+
+                    //Tabla pago de intereses y una parte proporcional del principal cada periodo
+
+                    for(var j=1;j<respJson.pagoParteProporcional.length;j++)
+                    {
+                       dataTable4.row.add(
+                            [
+                                respJson.pagoParteProporcional[j]["periodo"],
+                                respJson.fechas[j-1],//las fechas empiezan desde la posicion 0
+                                "$"+respJson.pagoParteProporcional[j]["saldoInicial"],
+                                "$"+respJson.pagoParteProporcional[j]["intereses"],
+                                "$"+respJson.pagoParteProporcional[j]["pagoCap"],
+                                "$"+respJson.pagoParteProporcional[j]["pagoPeriodo"],
+                                "$"+respJson.pagoParteProporcional[j]["saldoFinal"]
+                            ]
+                        ).draw();
+                    }
+
+                    //Tabla pagos crecientes
+                    for(var i=1;i<respJson.pagoCreciente.length;i++)
+                    {
+                       dataTable5.row.add(
+                            [
+                                respJson.pagoCreciente[i]["periodo"],
+                                respJson.fechas[i-1],//las fechas empiezan desde la posicion 0
+                                "$"+respJson.pagoCreciente[i]["saldoInicial"],
+                                "$"+respJson.pagoCreciente[i]["intereses"],
+                                "$"+respJson.pagoCreciente[i]["abonoCap"],
+                                "$"+respJson.pagoCreciente[i]["pago"],
+                                "$"+respJson.pagoCreciente[i]["saldoFinal"]
                             ]
                         ).draw();
                     }
@@ -138,4 +197,54 @@ $(document).ready(function(){
             "bFilter":false,
                 
             });
+    var dataTable4= $('#Tabla4').DataTable({
+        language: {
+            "emptyTable": "No hay información",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+                }
+            },
+        "paging":true,
+        "processing":true,
+        "serverSide":false,
+        "order": [],
+        "info":true,
+        "lengthChange": false,
+        "bFilter":false,                    
+    });
+    var dataTable5= $('#Tabla5').DataTable({
+        language: {
+            "emptyTable": "No hay información",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+                }
+            },
+        "paging":true,
+        "processing":true,
+        "serverSide":false,
+        "order": [],
+        "info":true,
+        "lengthChange": false,
+        "bFilter":false,                    
+    });
 });
