@@ -138,9 +138,8 @@ $(document).ready(function(){
                     dataTable3.clear().draw();
                     dataTable4.clear().draw();
                     dataTable5.clear().draw();
-
+                    
                     var respJson = JSON.parse(respAX);
-                    //console.log(respJson.data);
                     //Tabla de pagos iguales
                     for(var i=1;i<respJson.pagosIguales.length;i++)
                     {
@@ -155,7 +154,10 @@ $(document).ready(function(){
                                 "$"+respJson.pagosIguales[i]["saldoFinal"]
                             ]
                         ).draw();
+                        
                     }
+                    //console.log(respJson);
+                    
                     //Tabla de pago al finalizar el periodo
                     dataTable2.row.add(
                         [
