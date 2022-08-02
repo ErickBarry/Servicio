@@ -157,7 +157,7 @@ $(document).ready(function(){
                         
                     }
                     //console.log(respJson);
-                    
+                    //console.log(respJson);
                     //Tabla de pago al finalizar el periodo
                     dataTable2.row.add(
                         [
