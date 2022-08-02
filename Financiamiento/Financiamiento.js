@@ -8,7 +8,7 @@ $(document).ready(function(){
             firstDay: 1,//dia en que empieza la semana domingo =0  lunes =1 , etc.
             disableWeekend: false, //para que se seleccionen o no los fines de semana
             i18n:{//Poner las fechas en español
-                months:['Enero','Fecbero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                months:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
                 monthsShort:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
                 weekdays:['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
                 weekdaysShort:['Dom','Lun','Mar','Miérc','Juev','Vier','Sáb'],
