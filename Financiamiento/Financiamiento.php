@@ -82,6 +82,9 @@ switch($group1)
 
 ///////////////////////////////////////////////////////////////////////////////
 //PAGOS IGUALES//
+$amortizacionTotal = 0;
+$totalInteresesPagosIguales=0;
+$pagoTotalPagosIguales = 0;
 for($i=0;$i<=$meses;$i++)
 {
     $arrayAux=[];
@@ -99,12 +102,20 @@ for($i=0;$i<=$meses;$i++)
         $arrayAux["periodo"]=$i;
         $arrayAux["saldoInicial"]=$arreglo["pagosIguales"][$i-1]["saldoFinal"];
         $arrayAux["intereses"]=$arrayAux["saldoInicial"]*$TasaInteres;
+        $totalInteresesPagosIguales = $totalInteresesPagosIguales + $arrayAux["saldoInicial"]*$TasaInteres;
         $arrayAux["abonoCap"]=(($montoNecesitado*$TasaInteres)/(1-pow((1+$TasaInteres),$meses*(-1))))-$arrayAux["intereses"];
+        $amortizacionTotal = $amortizacionTotal + (($montoNecesitado*$TasaInteres)/(1-pow((1+$TasaInteres),$meses*(-1))))-$arrayAux["intereses"];
         $arrayAux["anualidad"]=($montoNecesitado*$TasaInteres)/(1-pow((1+$TasaInteres),$meses*(-1)));
         $arrayAux["saldoFinal"]=$arrayAux["saldoInicial"]-$arrayAux["abonoCap"];;
     }
     $arreglo["pagosIguales"][]=$arrayAux;
 }
+
+$arreglo["totalInteresesPagosIguales"] = number_format( $totalInteresesPagosIguales,2);
+$arreglo["amortizacionTotal"] = number_format($amortizacionTotal,2);
+$pagoTotalPagosIguales = $totalInteresesPagosIguales + $amortizacionTotal;
+$arreglo["pagoTotalPagosIguales"] = number_format($pagoTotalPagosIguales,2);
+
 ///////////////////////////////////////////////////////////////////////////
 
 //PAGO DE CAPITAL E INTERESES AL FINALIZAR EL PERIODO DEL PRESTAMO//
@@ -115,7 +126,7 @@ $arrayAux["pagoFinal"]=$montoNecesitado*(pow(1+$TasaInteres,$meses));
 $arrayAux["intereses"]=$arrayAux["pagoFinal"]-$montoNecesitado;
 $arreglo["pagoIntFinPeriodo"][]=$arrayAux;
 //////////////////////////////////////////////////////////////////////////
-
+$pagoFinalPeriodoTotal=0;
 //PAGO DE INTERESES AL FINAL DE CADA PERIODO Y PAGO DEL PRINCIPAL AL FINAL DEL PLAZO
 $interesPeriodo=$montoNecesitado*$TasaInteres;
 for($i=0;$i<$meses;$i++)
@@ -133,6 +144,7 @@ for($i=0;$i<$meses;$i++)
         $arrayAux["periodo"]=$i;
         $arrayAux["intereses"]=$interesPeriodo;
         $arrayAux["pagoFinalPeriodo"]=$interesPeriodo;
+        $pagoFinalPeriodoTotal = $pagoFinalPeriodoTotal +$interesPeriodo;
         $arrayAux["deudaDespuesPago"]=$montoNecesitado;
     }
     $arreglo["pagoCadaPeriodo"][]=$arrayAux;
@@ -143,10 +155,16 @@ $arrayAux["intereses"]=$interesPeriodo;
 $arrayAux["pagoFinalPeriodo"]=$interesPeriodo+$montoNecesitado;
 $arrayAux["deudaDespuesPago"]=0;
 $arreglo["pagoCadaPeriodo"][]=$arrayAux;
+$pagoFinalPeriodoTotal = $pagoFinalPeriodoTotal + $interesPeriodo + $montoNecesitado;
+$arreglo["bulletPagototal"]= $pagoFinalPeriodoTotal;
+
 //////////////////////////////////////////////////////////////////////////
 
-//PAGO DE INTERESES Y UNA PARTE PROPORCIONAL DEL PRINCIPAL CADA PERIODO
+//PAGO DE INTERESES Y UNA PARTE PROPORCIONAL DEL PRINCIPAL CADA PERIODO - PAGOS DECRECIENTES
 $pagoCap=$montoNecesitado/$meses;
+$decrecientesAmortizacionTotal = 0;
+$decrecientesInteresesTotales = 0;
+$decrecientesPagoTotal = 0;
 for($i=0;$i<=$meses;$i++)
 {
     $arrayAux=[];
@@ -164,15 +182,23 @@ for($i=0;$i<=$meses;$i++)
         $arrayAux["periodo"]=$i;
         $arrayAux["saldoInicial"]=$arreglo["pagoParteProporcional"][$i-1]["saldoFinal"];
         $arrayAux["intereses"]=$arrayAux["saldoInicial"]*$TasaInteres;
+        $decrecientesInteresesTotales = $decrecientesInteresesTotales + $arrayAux["saldoInicial"]*$TasaInteres;
         $arrayAux["pagoCap"]=$pagoCap;
+        $decrecientesAmortizacionTotal = $decrecientesAmortizacionTotal + $pagoCap;
         $arrayAux["pagoPeriodo"]=$arrayAux["intereses"]+$arrayAux["pagoCap"];
         $arrayAux["saldoFinal"]=$arrayAux["saldoInicial"]-$arrayAux["pagoCap"];;
     }
     $arreglo["pagoParteProporcional"][]=$arrayAux;
 }
+$arreglo["decrecientesAmortizacionTotal"]= number_format($decrecientesAmortizacionTotal,2);
+$arreglo["decrecientesInteresesTotales"] = number_format($decrecientesInteresesTotales,2);
+$decrecientesPagoTotal = $decrecientesAmortizacionTotal + $decrecientesInteresesTotales;
+$arreglo["decrecientesPagoTotal"] = number_format($decrecientesPagoTotal,2);
 
 //////////////////////////////////////////////////////////////////////////
-
+$crecientesAmortizacionTotal = 0;
+$crecientesInteresesTotales = 0;
+$crecientesPagoTotal = 0;
 //PAGOS CRECIENTES
 for($i=0;$i<=$meses;$i++)
 {
@@ -191,12 +217,20 @@ for($i=0;$i<=$meses;$i++)
         $arrayAux["periodo"]=$i;
         $arrayAux["saldoInicial"]=$arreglo["pagoCreciente"][$i-1]["saldoFinal"];
         $arrayAux["intereses"]=$arrayAux["saldoInicial"]*$TasaInteres;
+        $crecientesInteresesTotales = $crecientesInteresesTotales + $arrayAux["saldoInicial"]*$TasaInteres;
         $arrayAux["pago"]=($montoNecesitado/$meses)*pow(1+$TasaInteres,$i);
         $arrayAux["abonoCap"]=$arrayAux["pago"]-$arrayAux["intereses"];
+        $crecientesAmortizacionTotal = $crecientesAmortizacionTotal + $arrayAux["pago"]-$arrayAux["intereses"];
         $arrayAux["saldoFinal"]=$arrayAux["saldoInicial"]-$arrayAux["abonoCap"];;
     }
     $arreglo["pagoCreciente"][]=$arrayAux;
 }
+$arreglo["crecientesAmortizacionTotal"] = number_format($crecientesAmortizacionTotal,2);
+$arreglo["crecientesInteresesTotales"] = number_format($crecientesInteresesTotales,2);
+$crecientesPagoTotal = $crecientesAmortizacionTotal + $crecientesInteresesTotales;
+$arreglo["crecientesPagoTotal"] = number_format($crecientesPagoTotal,2);
+
+
 
 //////////////////////////////////////////////////////////////////////////
 //Poner formato de $ en el arreglo
