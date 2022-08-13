@@ -126,8 +126,9 @@ $arrayAux["pagoFinal"]=$montoNecesitado*(pow(1+$TasaInteres,$meses));
 $arrayAux["intereses"]=$arrayAux["pagoFinal"]-$montoNecesitado;
 $arreglo["pagoIntFinPeriodo"][]=$arrayAux;
 //////////////////////////////////////////////////////////////////////////
+
+//PAGO DE INTERESES AL FINAL DE CADA PERIODO Y PAGO DEL PRINCIPAL AL FINAL DEL PLAZO - Bullet
 $pagoFinalPeriodoTotal=0;
-//PAGO DE INTERESES AL FINAL DE CADA PERIODO Y PAGO DEL PRINCIPAL AL FINAL DEL PLAZO
 $interesPeriodo=$montoNecesitado*$TasaInteres;
 for($i=0;$i<$meses;$i++)
 {

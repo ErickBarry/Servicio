@@ -122,14 +122,51 @@
                   <div class="collapsible-body">
                       <span>
                         <div class="row">
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                              when an unknown printer took a galley of type and scrambled it to make a type 
-                              specimen book. It has survived not only five centuries, but also the leap into 
-                              electronic typesetting, remaining essentially unchanged. It was popularised in the 
-                              1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-                              recently with desktop publishing software like Aldus PageMaker including versions of
-                               Lorem Ipsum.
+                          <p>
+                              Recordemos que este tipo deuda
+                              se caracteriza por que el monto del pago  que se realiza en cada uno de los periodos es 
+                              siempre el mismo. Siendo los montos de la amortizacion y el monto de los intereses, 
+                              los que varian, de tal manera que al sumarlos obtenemos el pago.
+                          </p>
+                          <p>
+                              1.- El primer paso para hacer la tabla de amortizacion es calular el pago que haremos cada 
+                              periodo, el cual lo obtenemos con la siguiente formula:
+                              
+                              <img class="center materialboxed" width="350" src="./PagosIgualesFormulaPago.JPG">
+
+                               Donde:
+                              <ul>
+                                <b><li>i: Es la tasa de interes</li></b>
+                                <b><li>n: Es el numero de periodos que tenemos para pagar la deuda</li></b>
+                               </ul>
+                          </p>
+                          <p>
+                              2.- El siguiente paso es calcular los intereses con la formula mostraba abajo, 
+                              recordando que el capital inicial para el primer periodo es el monto del prestamo.
+
+                              <img class="center materialboxed" width="350" src="./PagosIgualesFormulaIntereses.JPG">
+                          </p>
+                          <p>
+                              3.- El tercer paso es calcular el monto de la amortización restando el monto de los 
+                              intereses al monto del pago que calculamos previamente. 
+
+                              <img class="center materialboxed" width="250" src="./PagosIgualesFormulaAmortizacion.JPG">
+                          </p>
+                          <p>
+                              4.- Finalmente calculamos el monto del capital final restando el monto de la amortizacion
+                              al monto del capital inicial.
+                              <img class="center materialboxed" width="350" src="./PagosIgualesFormulaCapitalFinal.JPG">                            
+                          </p>
+                          <p>
+                              De esta manera seguimos haciendo los calculos para el resto de los periodos, recordando
+                              el monto del capital inicial corresponde al monto del capital final del periodo anterior.
+                              Una vez que tenemos los caculos para todos los periodos ya tenemos nuetra tabla de 
+                              amortización terminada.  
+
+                          </p>
+                          <hr>
+                          <p>
+                              Esta es la tabla de amortización correspondiente  los datos que ingresaste arriba.
                           </p>
                         </div>
                           <div class="row">
@@ -147,7 +184,8 @@
                                         </tr>
                                       </thead>
                           
-                                  </table>   
+                                  </table>  
+                                  <h5 class="teal-text text-darken-4">Resumen de tu deuda</h5> 
                                   <table class="highlight centered responsive-table " id="TablaFinal1" data-page-length='12'>
                                     <thead>
                                       <tr>
@@ -167,6 +205,28 @@
                   <div class="collapsible-header"><i class="fa-solid fa-hourglass-end"></i>Pago de capital e intereses al finalizar el período del préstamo</div>
                   <div class="collapsible-body">
                       <span>
+                        <div class="row">
+                          <p>
+                              En este método de pago unicamente haces un pago, en el cual se incluiran el monto 
+                              prestado y los intereses, realizando este unico pagó el finalizar el perido establecido.
+                              Así, debemos calcular primero el pago total que haremos al finalzar el periodo usando 
+                              la siguiente formula:
+
+                              <img class="center materialboxed" width="450" src="./SegundoMetodoFormulaPagoFinal.JPG">
+                              Donde:
+                              <ul>
+                                <b><li>i: Es la tasa de interes</li></b>
+                                <b><li>n: Es el numero de periodos que tenemos para pagar la deuda</li></b>
+                              </ul>
+                          </p>
+                          <p>
+                            Finalmente para saber el monto que calcularemos de intereses restaremos el monto del prestamo
+                            al monto del pago final
+                          </p>
+                          <p>
+                            Esta es la tabla de amortización correspondiente  los datos que ingresaste arriba.
+                          </p>
+                        </div>
                           <div class="row">
                               <div class="col s12 l12 m12 centered" id="division">
                                   <table class="highlight centered responsive-table " id="Tabla2" data-page-length='12'>
@@ -191,14 +251,29 @@
                   <div class="collapsible-body">
                       <span>
                         <div class="row">
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                              when an unknown printer took a galley of type and scrambled it to make a type 
-                              specimen book. It has survived not only five centuries, but also the leap into 
-                              electronic typesetting, remaining essentially unchanged. It was popularised in the 
-                              1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-                              recently with desktop publishing software like Aldus PageMaker including versions of
-                               Lorem Ipsum.
+                          <p>
+                              Este metodo de pago se caracteriza en que por cada periodo solo se pagaran intereses,
+                              pero en el último periodo, se pagan los intereses mas el monto del prestamo.
+                          </p>
+                          <p>
+                              Para poder hacerla tabla de amortizacion por este método primero es necesario calcular 
+                              la tasa de interes efectiva. La cual la calculamos dividiendo la tasa de interes 
+                              entre 12.
+                              <img class="center materialboxed" width="450" src="./TasaEfectiva.JPG">
+                          </p>
+                          <p> 
+                              Despues calculamos el monto de los intereses, que estaremos pagando cada periodo 
+                              multiplicando el monto del prestamo por la tasa efectiva:
+
+                              <img class="center materialboxed" width="450" src="./Bullet_Intereses.JPG">
+                          </p>
+                          <p>
+                              Una vez que calculamos los intereses, llenamos la tabla para todos los periodos
+                              de tal manera que el monto del pago y de los intereses será el mimmo, pero 
+                              en el último periodo sumaremos el monto del prestamo, liquidando asi la deuda. 
+                          </p>
+                          <p>
+                            Esta es la tabla de amortización correspondiente a los datos que ingresaste arriba.
                           </p>
                         </div>
                           <div class="row">
@@ -215,6 +290,7 @@
                                       </thead>
                           
                                   </table>   
+                                  <h5 class="teal-text text-darken-4">Resumen de tu deuda</h5>
                                   <table class="highlight centered responsive-table " id="TablaFinal2" data-page-length='12'>
                                     <thead>
                                       <tr>
@@ -237,15 +313,40 @@
                       
                       <span>
                         <div class="row">
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                              when an unknown printer took a galley of type and scrambled it to make a type 
-                              specimen book. It has survived not only five centuries, but also the leap into 
-                              electronic typesetting, remaining essentially unchanged. It was popularised in the 
-                              1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-                              recently with desktop publishing software like Aldus PageMaker including versions of
-                               Lorem Ipsum.
+                          <p>
+                              El primer paso para este método es calcular la amortización, que será la misma para
+                              todos los periodos, y la calculamos dividiendo el monto del prestamo entre el
+                              número de periodos del prestamo:
+                              <img class="center materialboxed" width="450" src="./DecrecienteFormulaAmortizacion.JPG">
                           </p>
+                          <p>
+                              Lo siguiente sera calcular la tasa de interes efectiva. La cual la calculamos dividiendo 
+                              la tasa de interes entre 12.
+                              <img class="center materialboxed" width="450" src="./TasaEfectiva.JPG">
+                          </p>
+                          <p>
+                              El tercer paso es calcular los intereses del periodo, los cuales los calcularemos 
+                              multiplicando el capital inicial por la tasa efectiva de interes.
+
+                              <img class="center materialboxed" width="450" src="./CrecienteFormulaIntereses.JPG">
+                          </p>
+                          <p>
+                              El cuarto paso es calcular el pago total de ese periodo sumando el monto de la 
+                              amortización mas el monto de los intereses.
+
+                              <img class="center materialboxed" width="450" src="./DecrecienteFormulaPago.JPG">
+                          </p>
+
+                          <p>
+                            Finalmente calculamos el monto del capital final restando el monto de amortizacion al 
+                            monto de capital  inicial. No olvides que el capital inicial del periodo es el mismo 
+                            monto que el onto del periodo final anterior, con excepción del primer periodo donde 
+                            será el monto del prestamos.
+
+                              <img class="center materialboxed" width="450" src="./DecrecienteFormulaCF.JPG">
+                          </p>
+
+
                         </div>
                           <div class="row">
                               <div class="col s12 l12 m12 centered" id="division">
@@ -263,6 +364,7 @@
                                       </thead>
                           
                                   </table>  
+                                  <h5 class="teal-text text-darken-4">Resumen de tu deuda</h5>
                                   <table class="highlight centered responsive-table " id="TablaFinal3" data-page-length='12'>
                                     <thead>
                                       <tr>
@@ -283,14 +385,45 @@
                   <div class="collapsible-body">
                       <span>
                         <div class="row">
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                              when an unknown printer took a galley of type and scrambled it to make a type 
-                              specimen book. It has survived not only five centuries, but also the leap into 
-                              electronic typesetting, remaining essentially unchanged. It was popularised in the 
-                              1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-                              recently with desktop publishing software like Aldus PageMaker including versions of
-                               Lorem Ipsum.
+                          <p>
+                            Para poder hacerla tabla de amortizacion por este método primero es necesario calcular 
+                            la tasa de interes efectiva. La cual la calculamos dividiendo la tasa de interes 
+                            entre 12.
+                            <img class="center materialboxed" width="450" src="./TasaEfectiva.JPG">
+                          </p>
+                          <p>
+                              El segundo paso es calcular los intereses del periodo, los cuales los calcularemos 
+                              multiplicando el capital inicial por la tasa efectiva de interes.
+
+                              <img class="center materialboxed" width="450" src="./CrecienteFormulaIntereses.JPG">
+
+                          </p>
+                          <p>
+                              El tercer paso para construir la tabla de este métodosera calcular el 
+                              pago del periodo usando la siguiente formula:
+
+                              <img class="center materialboxed" width="450" src="./CrecienteFormulaPago.JPG">
+
+                              Donde:
+                              <ul>
+                                <b><li>i: Es la tasa de interes</li></b>
+                                <b><li>n: Es el numero de periodos que tenemos para pagar la deuda</li></b>
+                              </ul>
+                          </p>
+                          <p>
+                              Despues calculamos el monto de la amortización restando los intereses al pago 
+                              y continuando asi con cada uno de los periodos. 
+                          </p>
+                          <p>
+                            Finalmente calculamos el monto del capital final restando el monto de amortizacion al 
+                            monto de capital  inicial. No olvides que el capital inicial del periodo es el mismo 
+                            monto que el onto del periodo final anterior, con excepción del primer periodo donde 
+                            será el monto del prestamos.
+
+                            <img class="center materialboxed" width="450" src="./DecrecienteFormulaCF.JPG">
+                          </p>
+                          <p>
+                            Esta es la tabla de amortización correspondiente a los datos que ingresaste arriba.
                           </p>
                         </div>
                           <div class="row">
@@ -309,6 +442,7 @@
                                       </thead>
                           
                                   </table>    
+                                  <h5 class="teal-text text-darken-4">Resumen de tu deuda</h5>
                                   <table class="highlight centered responsive-table " id="TablaFinal4" data-page-length='12'>
                                     <thead>
                                       <tr>

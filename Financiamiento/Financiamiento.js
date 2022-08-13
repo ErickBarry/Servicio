@@ -298,8 +298,36 @@ $(document).ready(function(){
                         ]
                     ).draw();
 
+                    $.alert({
+                        title:"<h3 align='center'> Tablas de amortización</h3>",
+                        //mensaje desde el servidor
+                        content:"Tablas de amortizacioón creadas",
+                        theme: "supervan",
+                        type:"green",
+                        icon: "fas fa-money-bill-alt fa-2x",
+                        //bootstrap, se inabilita para poder usarlo
+                        boxWidth: "100%",
 
-                    
+                        useBootstrap: false,
+                        //callback para tomar deciones, recargar pagina
+                        onDestroy:function(){
+                            if(respJson.status == 1 && respJson.tipoU == "AD"){
+                                //document.location.href = "./administrador/";    
+                             }
+                             else if(respJson.status == 1 && respJson.tipoU == "AL"){
+                                 document.location.href = "./inicio/index.php";
+                                 ////document.location.href = "./pages/tweb20192.php"
+                                  
+                             }
+                             else{
+                                 //document.location.reload(true);
+                             }
+                        }
+                    });
+
+
+
+
                 }
             });    
         }
