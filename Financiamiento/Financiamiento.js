@@ -138,9 +138,20 @@ $(document).ready(function(){
                     dataTable3.clear().draw();
                     dataTable4.clear().draw();
                     dataTable5.clear().draw();
+                    tablaTotal1.clear().draw();
+                    tablaTotal2.clear().draw();
+                    tablaTotal3.clear().draw();
+                    tablaTotal4.clear().draw();
+                    var interesesTotal = 0;
+                    var abonoCapTotal = 0;
                     
+
                     var respJson = JSON.parse(respAX);
-                    //Tabla de pagos iguales
+                    //console.log(respJson.data);
+                    //Tabla de pagos iguales ------------------------------------------------------------------------
+                    var amortizacionTotal = 0;
+                    var totalInteresesPagosIguales = 0;
+                    var pagoTotalPagosIguales = 0;
                     for(var i=1;i<respJson.pagosIguales.length;i++)
                     {
                        dataTable.row.add(
@@ -154,11 +165,30 @@ $(document).ready(function(){
                                 "$"+respJson.pagosIguales[i]["saldoFinal"]
                             ]
                         ).draw();
+
+                        //interesesTotal= interesesTotal + parseFloat( respJson.pagosIguales[i]["intereses"]);
+                        //abonoCapTotal= abonoCapTotal + parseFloat( respJson.pagosIguales[i]["abonoCap"]);
                         
                     }
-                    //console.log(respJson);
-                    //console.log(respJson);
-                    //Tabla de pago al finalizar el periodo
+                    totalInteresesPagosIguales = respJson.totalInteresesPagosIguales;
+                    amortizacionTotal= respJson.amortizacionTotal;
+                    pagoTotalPagosIguales = respJson.pagoTotalPagosIguales;
+                   // pagoTotal = interesesTotal + amortizacionTotal;
+                    //console.log("Pagos iguales- Total de intereses: "+interesesTotal);
+                    //console.log("Pagos iguales- Total de abono a capital: "+abonoCapTotal);
+                    //console.log("Pagos iguales- Total de pago total: "+pagoTotal);
+
+                    tablaTotal1.row.add(
+                        [
+                            10,
+                            "$"+totalInteresesPagosIguales,
+                            "$"+amortizacionTotal, 
+                            "$"+pagoTotalPagosIguales
+                        ]
+                    ).draw();
+
+
+                    //Tabla de pago al finalizar el periodo ------------------------------------------------------------------------
                     dataTable2.row.add(
                         [
                             respJson.pagoIntFinPeriodo[0]["periodo"],
@@ -169,8 +199,10 @@ $(document).ready(function(){
                         ]
                     ).draw();
 
-                    //Tabla pago de intereses al final de cada periodo
-                    
+                    //Tabla pago de intereses al final de cada periodo(Bullet) ------------------------------------------
+                    var interesesTotalB=0;
+                    var prestamoInicialB = 0;
+                    var pagoTotalB=0;
                     for(var j=1;j<respJson.pagoCadaPeriodo.length;j++)
                     {
                        dataTable3.row.add(
@@ -182,10 +214,31 @@ $(document).ready(function(){
                                 "$"+respJson.pagoCadaPeriodo[j]["deudaDespuesPago"]
                             ]
                         ).draw();
+
+                        interesesTotalB= interesesTotalB + parseFloat( respJson.pagoCadaPeriodo[j]["intereses"]);
+                        //prestamoInicialB= prestamoInicialB + parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"]);
+                        console.log("Pago al finalizar el periodo No"+j+" = "+ parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"])+"...\n")
                     }
 
-                    //Tabla pago de intereses y una parte proporcional del principal cada periodo
+                    prestamoInicialB = respJson.pagoCadaPeriodo[1]["deudaDespuesPago"];
+                    pagoTotalB = respJson.bulletPagototal;
+                    console.log("Bullet- Total de intereses: "+interesesTotalB);
+                    console.log("Bullet- Prestamo : "+prestamoInicialB);
+                    console.log("Bullet- Total de pago total: "+pagoTotalB);
 
+                    tablaTotal2.row.add(
+                        [
+                            10,
+                            "$"+interesesTotalB,
+                            "$"+prestamoInicialB, 
+                            "$"+pagoTotalB
+                        ]
+                    ).draw();
+
+                    //Tabla pago de intereses y una parte proporcional del principal cada periodo (Decrecientes) ------------------------------------------
+                    var decrecientesAmortizacionTotal = 0;
+                    var decrecientesInteresesTotales = 0;
+                    var decrecientesPagoTotal = 0;
                     for(var j=1;j<respJson.pagoParteProporcional.length;j++)
                     {
                        dataTable4.row.add(
@@ -201,7 +254,23 @@ $(document).ready(function(){
                         ).draw();
                     }
 
-                    //Tabla pagos crecientes
+                    decrecientesAmortizacionTotal = respJson.decrecientesAmortizacionTotal;
+                    decrecientesInteresesTotales = respJson.decrecientesInteresesTotales;
+                    decrecientesPagoTotal = respJson.decrecientesPagoTotal;
+
+                    tablaTotal3.row.add(
+                        [
+                            10,
+                            "$"+decrecientesInteresesTotales,
+                            "$"+decrecientesAmortizacionTotal, 
+                            "$"+decrecientesPagoTotal
+                        ]
+                    ).draw();
+
+                    //Tabla pagos crecientes --------------------------------------------------------------------------
+                    var crecientesAmortizacionTotal = 0;
+                    var crecientesInteresesTotales = 0;
+                    var crecientesPagoTotal = 0;
                     for(var i=1;i<respJson.pagoCreciente.length;i++)
                     {
                        dataTable5.row.add(
@@ -216,10 +285,161 @@ $(document).ready(function(){
                             ]
                         ).draw();
                     }
+                    crecientesAmortizacionTotal = respJson.crecientesAmortizacionTotal;
+                    crecientesInteresesTotales = respJson.crecientesInteresesTotales;
+                    crecientesPagoTotal = respJson.crecientesPagoTotal;
+
+                    tablaTotal4.row.add(
+                        [
+                            10,
+                            "$"+crecientesInteresesTotales,
+                            "$"+crecientesAmortizacionTotal, 
+                            "$"+crecientesPagoTotal
+                        ]
+                    ).draw();
+
+                    $.alert({
+                        title:"<h3 align='center'> Tablas de amortización</h3>",
+                        //mensaje desde el servidor
+                        content:"Tablas de amortizacioón creadas",
+                        theme: "supervan",
+                        type:"green",
+                        icon: "fas fa-money-bill-alt fa-2x",
+                        //bootstrap, se inabilita para poder usarlo
+                        boxWidth: "100%",
+
+                        useBootstrap: false,
+                        //callback para tomar deciones, recargar pagina
+                        onDestroy:function(){
+                            if(respJson.status == 1 && respJson.tipoU == "AD"){
+                                //document.location.href = "./administrador/";    
+                             }
+                             else if(respJson.status == 1 && respJson.tipoU == "AL"){
+                                 document.location.href = "./inicio/index.php";
+                                 ////document.location.href = "./pages/tweb20192.php"
+                                  
+                             }
+                             else{
+                                 //document.location.reload(true);
+                             }
+                        }
+                    });
+
+
+
+
                 }
             });    
         }
       });
+
+
+    var tablaTotal1= $('#TablaFinal1').DataTable({
+    language: {
+        "emptyTable": "No hay información",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "paginate": {
+            "first": "Primero",
+            "last": "Último",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+    "paging":true,
+    "processing":true,
+    "serverSide":false,
+    "order": [],
+    "info":true,
+    "lengthChange": false,
+    "bFilter":false,
+        
+    });
+    var tablaTotal2= $('#TablaFinal2').DataTable({
+        language: {
+            "emptyTable": "No hay información",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+        "paging":true,
+        "processing":true,
+        "serverSide":false,
+        "order": [],
+        "info":true,
+        "lengthChange": false,
+        "bFilter":false,
+            
+    });
+
+    var tablaTotal3= $('#TablaFinal3').DataTable({
+    language: {
+        "emptyTable": "No hay información",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "paginate": {
+            "first": "Primero",
+            "last": "Último",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+    "paging":true,
+    "processing":true,
+    "serverSide":false,
+    "order": [],
+    "info":true,
+    "lengthChange": false,
+    "bFilter":false,
+        
+    });
+
+    var tablaTotal4= $('#TablaFinal4').DataTable({
+        language: {
+            "emptyTable": "No hay información",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+        "paging":true,
+        "processing":true,
+        "serverSide":false,
+        "order": [],
+        "info":true,
+        "lengthChange": false,
+        "bFilter":false,
+            
+    });
 
     var dataTable= $('#Tabla').DataTable({
     language: {
