@@ -142,6 +142,7 @@ $(document).ready(function(){
                     tablaTotal2.clear().draw();
                     tablaTotal3.clear().draw();
                     tablaTotal4.clear().draw();
+                    var fechaFinal;
                     var interesesTotal = 0;
                     var abonoCapTotal = 0;
                     
