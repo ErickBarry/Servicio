@@ -1,5 +1,16 @@
 <?php
 include("./../pages/getPosts.php");
+session_start();//crear sesion
+//pasar todos los datos del formulario a la sesion
+$_SESSION["monto"]=$montoNecesitado;
+$_SESSION["prestamista"]=$prestamista;
+$_SESSION["tasaInteresAnual"]=$interes;
+$_SESSION["tasaEfectiva"]=$tasaEfec;
+$_SESSION["periodos"]=$meses;
+$_SESSION["fecha"]=$fecha;
+$_SESSION["tipoPlazo"]=$group1;
+
+
 
 date_default_timezone_set("America/Mexico_City");
 $NvaFecha=str_replace('/','-',$fecha);//cambiar el formato 01/08/2022 por 01-08-2022 para que no haya problema en las operaciones

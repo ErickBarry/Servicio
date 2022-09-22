@@ -1,4 +1,7 @@
 $(document).ready(function(){
+//Deshabilitar los botones con la clase PDFTabla
+$('.PDFTabla').attr("disabled",true);
+
     //Iniciar el calendario
     $('.datepicker').datepicker(
         {
@@ -218,14 +221,14 @@ $(document).ready(function(){
 
                         interesesTotalB= interesesTotalB + parseFloat( respJson.pagoCadaPeriodo[j]["intereses"]);
                         //prestamoInicialB= prestamoInicialB + parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"]);
-                        console.log("Pago al finalizar el periodo No"+j+" = "+ parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"])+"...\n")
+                        //console.log("Pago al finalizar el periodo No"+j+" = "+ parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"])+"...\n")
                     }
 
                     prestamoInicialB = respJson.pagoCadaPeriodo[1]["deudaDespuesPago"];
                     pagoTotalB = respJson.bulletPagototal;
-                    console.log("Bullet- Total de intereses: "+interesesTotalB);
+                    /*console.log("Bullet- Total de intereses: "+interesesTotalB);
                     console.log("Bullet- Prestamo : "+prestamoInicialB);
-                    console.log("Bullet- Total de pago total: "+pagoTotalB);
+                    console.log("Bullet- Total de pago total: "+pagoTotalB);*/
 
                     tablaTotal2.row.add(
                         [
@@ -267,7 +270,6 @@ $(document).ready(function(){
                             "$"+decrecientesPagoTotal
                         ]
                     ).draw();
-
                     //Tabla pagos crecientes --------------------------------------------------------------------------
                     var crecientesAmortizacionTotal = 0;
                     var crecientesInteresesTotales = 0;
@@ -299,7 +301,9 @@ $(document).ready(function(){
                         ]
                     ).draw();
 
-                    $.alert({
+                    //Habilitar los botones con la clase PDFTabla
+                    $('.PDFTabla').attr("disabled",false);
+                    /*$.alert({
                         title:"<h3 align='center'> Tablas de amortización</h3>",
                         //mensaje desde el servidor
                         content:"Tablas de amortizacioón creadas",
@@ -324,7 +328,7 @@ $(document).ready(function(){
                                  //document.location.reload(true);
                              }
                         }
-                    });
+                    });*/
 
 
 
@@ -570,4 +574,8 @@ $(document).ready(function(){
         "lengthChange": false,
         "bFilter":false,                    
     });
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 });
