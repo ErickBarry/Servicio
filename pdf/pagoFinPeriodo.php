@@ -37,7 +37,7 @@ $mpdf->setHTMLHeader('<div class="row">
         <p align="left" style="font-size:15px;">Tablas de amortización</p>
     </div>
     <div class="col s5 l6 m6">
-        <p align="right" style="font-size:13px;">Pagos al finalizar el período</p>
+        <p align="right" style="font-size:13px;">Pago al finalizar el período</p>
     </div>
 </div>
 ');
@@ -119,6 +119,61 @@ switch($group1)
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
+$html.='<h5 class="teal-text text-accent-4"><b>Datos</b></h5>';
+    $html.='<h6><b>Prestamista: </b>'.$prestamista.'</h6>
+    <h6><b>Monto de la deuda: </b>$'.number_format($montoNecesitado,2).'</h6>
+    <h6><b>Tasa de interes anual: </b>'.$interes.'%</h6>
+    <h6><b>Tasa efectiva: </b>'.$tasaEfec.'</h6>';
+    //Checar si es 1 periodo para poner 1 mes/1 semana/1 año/1 trimestre etc.
+    
+    if($meses==1)
+        {
+            switch($group1)
+            {
+            case "Semanas":
+                {
+                    $html.='<h6><b>Periodos: </b>1 Semana</h6>';
+                    break;
+                }
+            case "Quincenas":
+                {
+                    $html.='<h6><b>Periodos: </b>1 Quincena</h6>';
+                    break;
+                }
+            case "Meses":
+                {
+                    $html.='<h6><b>Periodos: </b>1 Mes</h6>';
+                    break;
+                }
+            case "Trimestres":
+                {
+                    $html.='<h6><b>Periodos: </b>1 Trimestre</h6>';
+                    break;
+                }
+            case "Anios":
+                {
+                    $html.='<h6><b>Periodos: </b>1 Año</h6>';
+
+                    break;
+                }
+
+        }
+    }
+    else
+    {
+        if($group1=="Anios")
+        {
+            $html.='<h6><b>Periodos: </b>'.$meses.' Años</h6>';
+        }
+        else
+        {
+            $html.='<h6><b>Periodos: </b>'.$meses.' '.$group1.'</h6>';
+        }
+    }
+    $html.='<h6><b>Fecha de adquisición de la deuda: </b>'.$fecha.'</h6>';
+    $html.='<h6><b>Fecha del primer pago: </b>'.$arreglo["fechas"][0].'</h6>';
+    $html.='<h6><b>Fecha del último pago: </b>'.$arreglo["fechas"][sizeof($arreglo["fechas"])-1].'</h6>';
+    $html.='<hr><br>';
 $html.='<h4 class="teal-text text-darken-2 center">Tabla de amortización de pago de capital e intereses al finalizar el período</h4>';
 //$html.='<h6>Lista de los activos fijos, activos diferidos y el capital de trabajo con su respectivo total.</h6><br>';
 ////////////////////////////////////////////////////////////////////////////////////////////////

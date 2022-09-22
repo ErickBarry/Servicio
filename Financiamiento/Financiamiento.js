@@ -35,31 +35,31 @@ $('.PDFTabla').attr("disabled",true);
                     {
                         var TasaEfectiva=(valorInt/100)/52;
                         //pasar la tasa efectiva con 3 decimales
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Quincenas":
                     {
                         var TasaEfectiva=(valorInt/100)/26;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Meses":
                     {
                         var TasaEfectiva=(valorInt/100)/12;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Trimestres":
                     {
                         var TasaEfectiva=(valorInt/100)/4;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Anios":
                     {
                         var TasaEfectiva=valorInt/100;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
             }
@@ -86,31 +86,31 @@ $('.PDFTabla').attr("disabled",true);
                     {
                         var TasaEfectiva=(valorInt/100)/52;
                         //pasar la tasa efectiva con 3 decimales
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Quincenas":
                     {
                         var TasaEfectiva=(valorInt/100)/26;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Meses":
                     {
                         var TasaEfectiva=(valorInt/100)/12;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Trimestres":
                     {
                         var TasaEfectiva=(valorInt/100)/4;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Anios":
                     {
                         var TasaEfectiva=valorInt/100;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
             }
@@ -184,7 +184,7 @@ $('.PDFTabla').attr("disabled",true);
 
                     tablaTotal1.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+totalInteresesPagosIguales,
                             "$"+amortizacionTotal, 
                             "$"+pagoTotalPagosIguales
@@ -232,7 +232,7 @@ $('.PDFTabla').attr("disabled",true);
 
                     tablaTotal2.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+interesesTotalB,
                             "$"+prestamoInicialB, 
                             "$"+pagoTotalB
@@ -264,7 +264,7 @@ $('.PDFTabla').attr("disabled",true);
 
                     tablaTotal3.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+decrecientesInteresesTotales,
                             "$"+decrecientesAmortizacionTotal, 
                             "$"+decrecientesPagoTotal
@@ -294,7 +294,7 @@ $('.PDFTabla').attr("disabled",true);
 
                     tablaTotal4.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+crecientesInteresesTotales,
                             "$"+crecientesAmortizacionTotal, 
                             "$"+crecientesPagoTotal
