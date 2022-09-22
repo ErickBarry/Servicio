@@ -1,4 +1,7 @@
 $(document).ready(function(){
+//Deshabilitar los botones con la clase PDFTabla
+$('.PDFTabla').attr("disabled",true);
+
     //Iniciar el calendario
     $('.datepicker').datepicker(
         {
@@ -32,31 +35,31 @@ $(document).ready(function(){
                     {
                         var TasaEfectiva=(valorInt/100)/52;
                         //pasar la tasa efectiva con 3 decimales
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Quincenas":
                     {
                         var TasaEfectiva=(valorInt/100)/26;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Meses":
                     {
                         var TasaEfectiva=(valorInt/100)/12;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Trimestres":
                     {
                         var TasaEfectiva=(valorInt/100)/4;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Anios":
                     {
                         var TasaEfectiva=valorInt/100;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
             }
@@ -83,31 +86,31 @@ $(document).ready(function(){
                     {
                         var TasaEfectiva=(valorInt/100)/52;
                         //pasar la tasa efectiva con 3 decimales
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Quincenas":
                     {
                         var TasaEfectiva=(valorInt/100)/26;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Meses":
                     {
                         var TasaEfectiva=(valorInt/100)/12;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Trimestres":
                     {
                         var TasaEfectiva=(valorInt/100)/4;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
                 case "Anios":
                     {
                         var TasaEfectiva=valorInt/100;
-                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(3);
+                        document.getElementById('tasaEfec').value=TasaEfectiva.toFixed(4);
                         break;
                     }
             }
@@ -181,7 +184,7 @@ $(document).ready(function(){
 
                     tablaTotal1.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+totalInteresesPagosIguales,
                             "$"+amortizacionTotal, 
                             "$"+pagoTotalPagosIguales
@@ -218,18 +221,18 @@ $(document).ready(function(){
 
                         interesesTotalB= interesesTotalB + parseFloat( respJson.pagoCadaPeriodo[j]["intereses"]);
                         //prestamoInicialB= prestamoInicialB + parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"]);
-                        console.log("Pago al finalizar el periodo No"+j+" = "+ parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"])+"...\n")
+                        //console.log("Pago al finalizar el periodo No"+j+" = "+ parseFloat( respJson.pagoCadaPeriodo[j]["pagoFinalPeriodo"])+"...\n")
                     }
 
                     prestamoInicialB = respJson.pagoCadaPeriodo[1]["deudaDespuesPago"];
                     pagoTotalB = respJson.bulletPagototal;
-                    console.log("Bullet- Total de intereses: "+interesesTotalB);
+                    /*console.log("Bullet- Total de intereses: "+interesesTotalB);
                     console.log("Bullet- Prestamo : "+prestamoInicialB);
-                    console.log("Bullet- Total de pago total: "+pagoTotalB);
+                    console.log("Bullet- Total de pago total: "+pagoTotalB);*/
 
                     tablaTotal2.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+interesesTotalB,
                             "$"+prestamoInicialB, 
                             "$"+pagoTotalB
@@ -261,13 +264,12 @@ $(document).ready(function(){
 
                     tablaTotal3.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+decrecientesInteresesTotales,
                             "$"+decrecientesAmortizacionTotal, 
                             "$"+decrecientesPagoTotal
                         ]
                     ).draw();
-
                     //Tabla pagos crecientes --------------------------------------------------------------------------
                     var crecientesAmortizacionTotal = 0;
                     var crecientesInteresesTotales = 0;
@@ -292,14 +294,16 @@ $(document).ready(function(){
 
                     tablaTotal4.row.add(
                         [
-                            10,
+                            respJson.fechas[respJson.fechas.length-1],
                             "$"+crecientesInteresesTotales,
                             "$"+crecientesAmortizacionTotal, 
                             "$"+crecientesPagoTotal
                         ]
                     ).draw();
 
-                    $.alert({
+                    //Habilitar los botones con la clase PDFTabla
+                    $('.PDFTabla').attr("disabled",false);
+                    /*$.alert({
                         title:"<h3 align='center'> Tablas de amortización</h3>",
                         //mensaje desde el servidor
                         content:"Tablas de amortizacioón creadas",
@@ -324,7 +328,7 @@ $(document).ready(function(){
                                  //document.location.reload(true);
                              }
                         }
-                    });
+                    });*/
 
 
 
@@ -570,4 +574,8 @@ $(document).ready(function(){
         "lengthChange": false,
         "bFilter":false,                    
     });
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 });
