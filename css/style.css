@@ -619,12 +619,13 @@ blockquote{
 
   /*Estilo pagina introduccion*/
   .fondo-introduccion{
-    background-image: url("./../assets/img/piggy_background.jpg");
+    background-image: url("./../assets/img/Bienvenida.png");
     min-height: 70vh;
     background-size:cover;
     background-repeat: no-repeat;
     position: relative;
     width: 100%;
+    opacity: 0.2;
   }
   .sin-fondo .card-panel{
     background: rgba(242,113,134,.6);
@@ -637,10 +638,9 @@ blockquote{
     background-repeat: no-repeat;
     position: relative;
     width: 100%;
+    opacity: 0.5;
   }
   .sin-fondo-obj .card-panel{
     background: rgba(141,186,245,.6);
   }
-  
-
   

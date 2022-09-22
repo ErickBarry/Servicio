@@ -37,7 +37,7 @@
         </div>
         <!-- Notifications area -->
         <section class="z-depth-3 NotificationArea">
-            <?php include("./../html/comunes/notification.html"); ?>      
+            <?php include("./../html/comunes/notification.html"); ?>     
         </section>
 
 
