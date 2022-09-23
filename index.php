@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <!-- MaterialDark CSS -->
 	<link rel="stylesheet" href="./css/style.css">
+     <!--version Materialize to collapsible menu--> 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 </head>
 <body class="stretched sticky-responsive-menu" data-loader="7">
      <!-- Nav Lateral -->

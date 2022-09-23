@@ -13,14 +13,18 @@
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-        <script src="https://kit.fontawesome.com/49f2039b91.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/49f2039b91.js" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <!-- Malihu jQuery custom content scroller CSS -->
 	<link rel="stylesheet" href="./../../css/jquery.mCustomScrollbar.css">    
     <!-- Confirm -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <!-- MaterialDark CSS -->
 	<link rel="stylesheet" href="./../../css/style.css">
+    <!--version Materialize to collapsible menu--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 </head>
 <body class="stretched sticky-responsive-menu" data-loader="7">
      <!-- Nav Lateral -->
