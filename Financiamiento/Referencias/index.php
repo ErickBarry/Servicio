@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Proyectos de inversion</title>   
+	<title>Referencias</title>   
      <!-- Normalize CSS -->
 	<link rel="stylesheet" href="./../../css/normalize.css">    
      <!-- Materialize CSS -->
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <!-- MaterialDark CSS -->
 	<link rel="stylesheet" href="./../../css/style.css">
+    <!--version Materialize to collapsible menu--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 </head>
 <body class="stretched sticky-responsive-menu" data-loader="7">
      <!-- Nav Lateral -->
@@ -52,7 +54,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <!-- jQuery  -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="./js/jquery-2.2.0.min.js"><\/script>')</script>
+	<script>window.jQuery || document.write('<script src="./../../js/jquery-2.2.0.min.js"><\/script>')</script>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
     <!-- Malihu jQuery custom content scroller JS -->

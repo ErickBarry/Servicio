@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Proyectos de inversion</title>   
+	<title>Pago único</title>   
      <!-- Normalize CSS -->
 	<link rel="stylesheet" href="./../../css/normalize.css">    
      <!-- Materialize CSS -->
@@ -24,6 +24,8 @@
     <!-- MaterialDark CSS -->
 	<link rel="stylesheet" href="./../../css/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+  <!--version Materialize to collapsible menu--> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
 
 </head>
