@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="./../css/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 <!--version Materialize to collapsible menu--> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">-->
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 
@@ -40,7 +40,7 @@
     <section class="ContentPage full-width ">
         <!-- Nav Info -->
         <div class="ContentPage-Nav full-width">
-           <?php include("./../html/comunes/nav.html"); ?>       
+           <?php include("./../html/comunes/nav_1.html"); ?>       
         </div>
         <!-- Notifications area -->
         <section class="z-depth-3 NotificationArea">
@@ -68,11 +68,7 @@
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
 	<script src="./../js/main.js"></script>
-  <script>
-    $(document).ready(function(){
-        $('.collapsible').collapsible();
-    });
-  </script>
+ 
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" defer></script>
     <script src="./../js/validetta101/dist/validetta.js" defer></script>
   <script src="./../js/validetta101/dist/validetta.min.js" defer></script>
