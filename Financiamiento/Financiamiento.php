@@ -168,7 +168,7 @@ $arrayAux["pagoFinalPeriodo"]=$interesPeriodo+$montoNecesitado;
 $arrayAux["deudaDespuesPago"]=0;
 $arreglo["pagoCadaPeriodo"][]=$arrayAux;
 $pagoFinalPeriodoTotal = $pagoFinalPeriodoTotal + $interesPeriodo + $montoNecesitado;
-$arreglo["bulletPagototal"]= $pagoFinalPeriodoTotal;
+$arreglo["bulletPagototal"]= number_format( $pagoFinalPeriodoTotal,2);
 
 //////////////////////////////////////////////////////////////////////////
 
