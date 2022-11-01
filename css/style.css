@@ -675,7 +675,7 @@ blockquote{
   }
 
   .fondo-evaluacion{
-    background-image: url("./../assets/img/evaluacion_2.jpg");
+    background-image: url("./../assets/img/Recurso 11fondo_.png");
     min-height: 70vh;
     background-size:cover;
     background-repeat: no-repeat;
@@ -690,7 +690,7 @@ blockquote{
 /*Estilo de la imagen metodologia*/
 .imagen-metodologia {
 
-    background-image: url('./../assets/img/metodologia.png');
+    background-image: url('./../assets/img/Recurso 13fondo_.png');
      min-height: 100vh;
         background-size:100% auto;
         background-repeat: no-repeat;
@@ -700,7 +700,7 @@ blockquote{
 /*Estilo imagen bienvenida*/
 .imagen-bienvenida {
 
-    background-image: url('./../assets/img/bienvenida_1.jpg');
+    background-image: url("./../assets/img/Recurso 10fondo_.png");
      min-height: 100vh;
         background-size:90% auto;
         background-repeat: no-repeat;
@@ -710,7 +710,7 @@ blockquote{
 /*Estilo imagen introduccion*/
 .imagen-introduccion{
 
-    background-image: url('./../assets/img/intro.jpg');
+    background-image: url('./../assets/img/Recurso 9fondo_.png');
      min-height: 100vh;
         background-size:60% auto;
         background-repeat: no-repeat;
@@ -720,7 +720,7 @@ blockquote{
 /*Estilo de la imagen objetivo*/
 .imagen-objetivo {
 
-    background-image: url('./../assets/img/objetivo_1.jpg');
+    background-image: url('./../assets/img/Recurso 12fondo_.png');
      min-height: 100vh;
         background-size:100% auto;
         background-repeat: no-repeat;
