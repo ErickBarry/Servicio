@@ -619,7 +619,7 @@ blockquote{
 
   /*Estilo pagina introduccion*/
   .fondo-bienvenida{
-    background-image: url("./../assets/img/Bienvenida.png");
+    background-image: url("./../assets/img/Recurso 10fondo_.png");
     min-height: 70vh;
     background-size:cover;
     background-repeat: no-repeat;
@@ -647,7 +647,7 @@ blockquote{
   }
   
   .fondo-introduccion{
-    background-image: url("./../assets/img/Introduccion.jpg");
+    background-image: url("./../assets/img/Recurso 9fondo_.png");
     min-height: 70vh;
     background-size:cover;
     background-repeat: no-repeat;
@@ -661,7 +661,7 @@ blockquote{
   }
 
   .fondo-metodologia{
-    background-image: url("./../assets/img/metodologia.jpg");
+    background-image: url("./../assets/img/Recurso 13fondo_.png");
     min-height: 70vh;
     background-size:cover;
     background-repeat: no-repeat;
@@ -705,6 +705,7 @@ blockquote{
         background-size:90% auto;
         background-repeat: no-repeat;
         position: relative;
+        top: 200px; left: 50px;
         width: 100%;
     }
 /*Estilo imagen introduccion*/
