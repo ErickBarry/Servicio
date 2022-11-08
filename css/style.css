@@ -695,6 +695,7 @@ blockquote{
         background-size:100% auto;
         background-repeat: no-repeat;
         position: relative;
+        top: 200px; left: 50px;
         width: 100%;
     }
 /*Estilo imagen bienvenida*/
@@ -716,6 +717,7 @@ blockquote{
         background-size:60% auto;
         background-repeat: no-repeat;
         position: relative;
+        top: 200px; left: 50px;
         width: 100%;
     }
 /*Estilo de la imagen objetivo*/
@@ -726,6 +728,7 @@ blockquote{
         background-size:100% auto;
         background-repeat: no-repeat;
         position: relative;
+        top: 200px; left: 50px;
         width: 100%;
     }
 /*Estilo de la imagen manual de usuario*/
