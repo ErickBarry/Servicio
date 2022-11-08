@@ -1,0 +1,12 @@
+<?php
+require_once './../assets/dompdf/autoload.inc.php';
+use Dompdf\Dompdf;
+$dompdf=new Dompdf();
+$options=$dompdf->getOptions();
+$options->set(array('isRemoteEnable'=>true));
+$dompdf->setOptions($options);
+$dompdf->loadHtml("hola");
+$dompdf->setPaper("letter");
+$dompdf->render();
+$dompdf->stream("archivo_.pdf",array("Attachment"=>false));
+?>
