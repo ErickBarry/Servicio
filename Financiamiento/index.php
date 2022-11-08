@@ -52,6 +52,7 @@
         <div class="row">
             <?php include("index.html");?>
         </div>
+        
         <!-- Footer -->   
         <footer class="footer-MaterialDark grey darken-4">
              <?php include("./../html/comunes/footer.html"); ?> 
@@ -78,22 +79,6 @@
   <script src="./../js/validetta101/dist/validetta.min.js" defer></script>
   <script src="./../js/validetta101/localization/validettaLang-es-ES.js" defer></script>
 <script src="./Financiamiento.js"></script>
-<script>
-    function funcion(){
-        <?php
-require_once './../assets/dompdf/autoload.inc.php';
-use Dompdf\Dompdf;
-$dompdf=new Dompdf();
-$options=$dompdf->getOptions();
-$options->set(array('isRemoteEnable'=>true));
-$dompdf->setOptions($options);
-$dompdf->loadHtml("hola");
-$dompdf->setPaper("letter");
-$dompdf->render();
-$dompdf->stream("archivo_.pdf",array("Attachment"=>false));
-?>
-    }
-  </script>
 
 </body>
 </html>
