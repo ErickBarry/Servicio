@@ -78,6 +78,11 @@
   <script src="./../js/validetta101/dist/validetta.min.js" defer></script>
   <script src="./../js/validetta101/localization/validettaLang-es-ES.js" defer></script>
 <script src="./Financiamiento.js"></script>
+<script>
+    function funcion(){
+      alert("<");
+    }
+  </script>
 
 </body>
 </html>
