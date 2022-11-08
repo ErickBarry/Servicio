@@ -276,8 +276,8 @@ $html.='<tr>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Write some HTML code:
-$mpdf->WriteHTML($html);
+$mpdf->WriteHTML($html,\Mpdf\HTMLParserMode::HTML_BODY);
 
 // Output a PDF file directly to the browser
-$mpdf->Output();
+$mpdf->Output('filename.pdf',\Mpdf\Output\Destination::INLINE);
 ?>
