@@ -27,7 +27,7 @@ function Header()
     $this->SetTextColor(0,0,0);
     $this->Cell(160,10,utf8_decode('Tablas de amortización'),0,0,'L');
     $this->SetFont('Times','',12);
-    $this->Cell(20,10,utf8_decode('Pagos iguales'),0,0,'R');
+    $this->Cell(20,10,utf8_decode('Pago al finalizar el período'),0,0,'R');
     // Salto de línea
     $this->Ln(20);
 }
@@ -60,6 +60,7 @@ $arreglo["pagoParteProporcional"] = [];
 $arreglo["pagoCreciente"] = [];
 $arreglo["fechas"] = [];//lista de las fechas
 $TasaInteres=0.0;
+
 
 switch($group1)
 {
@@ -126,13 +127,7 @@ switch($group1)
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
-/*$html.='<h5 class="teal-text text-accent-4"><b>Datos</b></h5>';
-    $html.='<h6><b>Prestamista: </b>'.$prestamista.'</h6>
-    <h6><b>Monto de la deuda: </b>$'.number_format($montoNecesitado,2).'</h6>
-    <h6><b>Tasa de interes anual: </b>'.$interes.'%</h6>
-    <h6><b>Tasa efectiva: </b>'.$tasaEfec.'</h6>';
-    */
-    $pdf->SetFont('Times','b',20);
+$pdf->SetFont('Times','b',20);
     $pdf->SetTextColor(0,152,117);
     $pdf->Cell(2);
     $pdf->Cell(160,10,utf8_decode('Datos'),0,1,'L');
@@ -270,106 +265,34 @@ switch($group1)
 
     $pdf->SetFont('Times','b',20);
     $pdf->SetTextColor(8,108,152);
+    $pdf->Cell(2,10,'',0,1);
     $pdf->Cell(2);
-    $pdf->Cell(180,30,utf8_decode('Tabla de amortización de pagos iguales'),0,1,'C');
+    $pdf->Cell(180,10,utf8_decode('Tabla de amortización de pago de capital e intereses'),0,1,'C');
+    $pdf->Cell(180,10,utf8_decode('al finalizar el período'),0,1,'C');
 //////////////////////////////////////////////
 
 $pdf->SetFont('Times','b',12);
 $pdf->SetTextColor(0,0,0);
+$pdf->Cell(2,10,'',0,1);
 $pdf->Cell(2);
-$pdf->Cell(20,10,utf8_decode('# Pago'),1,0,'C');
-$pdf->Cell(24,10,utf8_decode('Fecha'),1,0,'C');
-$pdf->Cell(30,10,utf8_decode('Saldo inicial'),1,0,'C');
-$pdf->Cell(25,10,utf8_decode('Intereses'),1,0,'C');
-$pdf->Cell(32,10,utf8_decode('Amortización'),1,0,'C');
-$pdf->Cell(28,10,utf8_decode('Anualidad'),1,0,'C');
-$pdf->Cell(28,10,utf8_decode('Saldo final'),1,1,'C');
+$pdf->Cell(25,10,utf8_decode('# Pago'),1,0,'C');
+$pdf->Cell(28,10,utf8_decode('Fecha'),1,0,'C');
+$pdf->Cell(44,10,utf8_decode('Amortización'),1,0,'C');
+$pdf->Cell(44,10,utf8_decode('Pago de intereses'),1,0,'C');
+$pdf->Cell(44,10,utf8_decode('Pago final'),1,1,'C');
 //////////////////////////////////////////////
-$amortizacionTotal = 0;
-$totalInteresesPagosIguales=0;
-$pagoTotalPagosIguales = 0;
-for($i=0;$i<=$meses;$i++)
-{
-    $arrayAux=[];
-    if($i==0)//periodo 0, solo es el saldo final
-    {
-        $arrayAux["periodo"]=$i;
-        $arrayAux["saldoInicial"]=0;
-        $arrayAux["intereses"]=0;
-        $arrayAux["abonoCap"]=0;
-        $arrayAux["anualidad"]=0;
-        $arrayAux["saldoFinal"]=$montoNecesitado;
-    }
-    else
-    {
-        $arrayAux["periodo"]=$i;
-        $arrayAux["saldoInicial"]=$arreglo["pagosIguales"][$i-1]["saldoFinal"];
-        $arrayAux["intereses"]=$arrayAux["saldoInicial"]*$TasaInteres;
-        $totalInteresesPagosIguales = $totalInteresesPagosIguales + $arrayAux["saldoInicial"]*$TasaInteres;
-        $arrayAux["abonoCap"]=(($montoNecesitado*$TasaInteres)/(1-pow((1+$TasaInteres),$meses*(-1))))-$arrayAux["intereses"];
-        $amortizacionTotal = $amortizacionTotal + (($montoNecesitado*$TasaInteres)/(1-pow((1+$TasaInteres),$meses*(-1))))-$arrayAux["intereses"];
-        $arrayAux["anualidad"]=($montoNecesitado*$TasaInteres)/(1-pow((1+$TasaInteres),$meses*(-1)));
-        $arrayAux["saldoFinal"]=$arrayAux["saldoInicial"]-$arrayAux["abonoCap"];;
-    }
-    $arreglo["pagosIguales"][]=$arrayAux;
-}
-for($j=1;$j<sizeof($arreglo["pagosIguales"]);$j++)
-{
-   /* $html.='<tr>
-                <td>'.$arreglo["pagosIguales"][$j]["periodo"].'</td>
-                <td>'.$arreglo["fechas"][$j-1].'</td>
-                <td align="right">$'.number_format($arreglo["pagosIguales"][$j]["saldoInicial"],2).'</td>
-                <td align="right">$'.number_format($arreglo["pagosIguales"][$j]["intereses"],2).'</td>
-                <td align="right">$'.number_format($arreglo["pagosIguales"][$j]["abonoCap"],2).'</td>
-                <td align="right">$'.number_format($arreglo["pagosIguales"][$j]["anualidad"],2).'</td>
-                <td align="right">$'.number_format($arreglo["pagosIguales"][$j]["saldoFinal"],2).'</td>
-            </tr>';*/
-
-            $pdf->SetFont('Times','',12);
-            $pdf->SetTextColor(0,0,0);
-            $pdf->Cell(2);
-            $pdf->Cell(20,10,utf8_decode($arreglo["pagosIguales"][$j]["periodo"]),1,0,'C');
-            $pdf->Cell(24,10,utf8_decode($arreglo["fechas"][$j-1]),1,0,'C');
-            $pdf->Cell(30,10,utf8_decode('$'.number_format($arreglo["pagosIguales"][$j]["saldoInicial"],2)),1,0,'R');
-            $pdf->Cell(25,10,utf8_decode('$'.number_format($arreglo["pagosIguales"][$j]["intereses"],2)),1,0,'R');
-            $pdf->Cell(32,10,utf8_decode('$'.number_format($arreglo["pagosIguales"][$j]["abonoCap"],2)),1,0,'R');
-            $pdf->Cell(28,10,utf8_decode('$'.number_format($arreglo["pagosIguales"][$j]["anualidad"],2)),1,0,'R');
-            $pdf->Cell(28,10,utf8_decode('$'.number_format($arreglo["pagosIguales"][$j]["saldoFinal"],2)),1,1,'R');
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-//TABLA RESUMEN
-$pdf->SetFont('Times','b',20);
-$pdf->SetTextColor(8,108,152);
-$pdf->Cell(2);
-$pdf->Cell(180,30,utf8_decode('Resumen de tu deuda'),0,1,'C');
-
-$pdf->SetFont('Times','b',12);
-$pdf->SetTextColor(0,0,0);
-$pdf->Cell(2);
-$pdf->Cell(45,10,utf8_decode('Fecha de liquidación'),1,0,'C');
-$pdf->Cell(47,10,utf8_decode('Total de intereses'),1,0,'C');
-$pdf->Cell(48,10,utf8_decode('Amortización total'),1,0,'C');
-$pdf->Cell(48,10,utf8_decode('Total pagado'),1,1,'C');
-
-$arreglo["totalInteresesPagosIguales"] = number_format( $totalInteresesPagosIguales,2);
-$arreglo["amortizacionTotal"] = number_format($amortizacionTotal,2);
-$pagoTotalPagosIguales = $totalInteresesPagosIguales + $amortizacionTotal;
-$arreglo["pagoTotalPagosIguales"] = number_format($pagoTotalPagosIguales,2);
-
 $pdf->SetFont('Times','',12);
             $pdf->SetTextColor(0,0,0);
             $pdf->Cell(2);
-            $pdf->Cell(45,10,utf8_decode($arreglo["fechas"][sizeof($arreglo["fechas"])-1]),1,0,'C');
-            $pdf->Cell(47,10,utf8_decode('$'.$arreglo["totalInteresesPagosIguales"]),1,0,'R');
-            $pdf->Cell(48,10,utf8_decode('$'.$arreglo["amortizacionTotal"]),1,0,'R');
-            $pdf->Cell(48,10,utf8_decode('$'.$arreglo["pagoTotalPagosIguales"]),1,0,'R');
+            $pdf->Cell(25,10,utf8_decode('1'),1,0,'C');
+            $pdf->Cell(28,10,utf8_decode($arreglo["fechas"][sizeof($arreglo["fechas"])-1]),1,0,'C');
+            $pdf->Cell(44,10,utf8_decode('$'.number_format($montoNecesitado,2)),1,0,'R');
+            $pdf->Cell(44,10,utf8_decode('$'.number_format(($montoNecesitado*(pow(1+$TasaInteres,$meses)))-$montoNecesitado,2)),1,0,'R');
+            $pdf->Cell(44,10,utf8_decode('$'.number_format($montoNecesitado*(pow(1+$TasaInteres,$meses)),2)),1,0,'R');
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 $pdf->Output();
 ?>
-
-
