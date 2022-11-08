@@ -84,7 +84,7 @@
 
 
 
-require_once __DIR__ .'./../assets/mpdf/vendor/autoload.php';
+require_once __DIR__ .'https://serviciosocialescom.herokuapp.com/assets/mpdf/vendor/autoload.php';
 /////////////////////////////////////////////////////////////////////////
 // Create an instance of the class:
 $mpdfConfig = array(
