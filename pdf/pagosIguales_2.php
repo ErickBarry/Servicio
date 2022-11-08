@@ -10,7 +10,7 @@ $meses=$_SESSION["periodos"];
 $fecha=$_SESSION["fecha"];
 $group1=$_SESSION["tipoPlazo"];
 
-require_once __DIR__ .'https://serviciosocialescom.herokuapp.com/assets/mpdf/vendor/autoload.php';
+require_once __DIR__ .'./../assets/mpdf/vendor/autoload.php';
 /////////////////////////////////////////////////////////////////////////
 // Create an instance of the class:
 $mpdfConfig = array(
@@ -24,7 +24,7 @@ $mpdfConfig = array(
 $mpdf = new \Mpdf\Mpdf($mpdfConfig);
 $mpdf->SetTitle('Pagos iguales');//titulo del documento
 
-$stylesheet = file_get_contents('https://serviciosocialescom.herokuapp.com/css/estiloPDF.css');
+$stylesheet = file_get_contents('./../css/estiloPDF.css');
 $mpdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
 
 $mpdf->setFooter('{PAGENO}');
@@ -276,7 +276,7 @@ $html.='<tr>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Write some HTML code:
-$mpdf->WriteHTML($html,\Mpdf\HTMLParserMode::HTML_BODY);
+$mpdf->WriteHTML($html);
 
 // Output a PDF file directly to the browser
 $mpdf->Output('filename.pdf',\Mpdf\Output\Destination::DOWNLOAD);
