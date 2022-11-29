@@ -346,8 +346,8 @@ $('.PDFTabla').attr("disabled",true);
         "processing": "Procesando...",
         "search": "Buscar:",
         "zeroRecords": "Sin resultados encontrados",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+        "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
         "infoFiltered": "(Filtrado de _MAX_ total entradas)",
         "paginate": {
             "first": "Primero",
@@ -372,8 +372,8 @@ $('.PDFTabla').attr("disabled",true);
             "processing": "Procesando...",
             "search": "Buscar:",
             "zeroRecords": "Sin resultados encontrados",
-            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-            "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+            "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
             "infoFiltered": "(Filtrado de _MAX_ total entradas)",
             "paginate": {
                 "first": "Primero",
@@ -399,8 +399,8 @@ $('.PDFTabla').attr("disabled",true);
         "processing": "Procesando...",
         "search": "Buscar:",
         "zeroRecords": "Sin resultados encontrados",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 a 0 de 0 Entradas",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+        "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
         "infoFiltered": "(Filtrado de _MAX_ total entradas)",
         "paginate": {
             "first": "Primero",
