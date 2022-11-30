@@ -59,7 +59,7 @@
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
-	<script src="./../js/main.js"></script>
+	<script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
     <!--version Materialize to collapsible menu--> 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>

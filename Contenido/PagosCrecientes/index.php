@@ -65,7 +65,7 @@
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./../../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
-	<script src="./../../js/main.js"></script>
+	<script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
   <script>
     $(document).ready(function(){
         $('.collapsible').collapsible();
