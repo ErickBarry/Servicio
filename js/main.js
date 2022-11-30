@@ -9,7 +9,7 @@ $(document).ready(function(){
             if(anchoPagina<500)
             {
                 let titulo=document.getElementById('TituloPagina');
-                titulo.style.fontSize='8px';
+                titulo.style.fontSize='7.5px';
             }
             else if(anchoPagina>500&& anchoPagina<=600)
             {
