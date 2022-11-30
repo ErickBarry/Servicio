@@ -40,7 +40,7 @@
     <section class="ContentPage full-width ">
         <!-- Nav Info -->
         <div class="ContentPage-Nav full-width">
-           <?php include("./../html/comunes/nav_1.html"); ?>       
+           <?php include("./../html/comunes/nav.html"); ?>       
         </div>
         <!-- Notifications area -->
         <section class="z-depth-3 NotificationArea">
@@ -65,6 +65,9 @@
 	<script>window.jQuery || document.write('<script src="./../js/jquery-2.2.0.min.js"><\/script>')</script>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"defer></script> 
+    <!-- MaterialDark JS  -->
+	<script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
+    
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  
     
@@ -77,8 +80,7 @@
     <script src="./../js/validetta101/dist/validetta.js" defer></script>
   <script src="./../js/validetta101/dist/validetta.min.js" defer></script>
   <script src="./../js/validetta101/localization/validettaLang-es-ES.js" defer></script>
-  <!-- MaterialDark JS  -->
-	<script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
+  
 <script src="./Financiamiento.js"></script>
 
 </body>
