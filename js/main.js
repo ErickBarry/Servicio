@@ -67,11 +67,17 @@ $(document).ready(function(){
             {
                 let bontoncasa=document.getElementById('BotonCasa');
                 bontoncasa.className="fa-solid fa-house-chimney fa-sm";
+
+                let tamlogoIPN=document.getElementById('idLogoIPN');
+                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:70%"></figure>';
             }
             else
             {
                 let bontoncasa=document.getElementById('BotonCasa');
                 bontoncasa.className="fa-solid fa-house-chimney fa-xl small";
+
+                let tamlogoIPN=document.getElementById('idLogoIPN');
+                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:150%"></figure>';
             }
         document.getElementById('SpanID1').innerText = document.documentElement.clientWidth;
         document.getElementById('SpanID2').innerText = document.documentElement.clientHeight;
