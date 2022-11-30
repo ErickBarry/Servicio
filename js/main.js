@@ -69,7 +69,7 @@ $(document).ready(function(){
                 bontoncasa.className="fa-solid fa-house-chimney fa-sm";
 
                 let tamlogoIPN=document.getElementById('idLogoIPN');
-                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:60%"></figure>';
+                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" width:60%></figure>';
             }
             else
             {
