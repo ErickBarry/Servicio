@@ -6,7 +6,7 @@ $(document).ready(function(){
         function start(){
             let anchoPagina=document.documentElement.clientWidth;
             let altoPagina=document.documentElement.clientHeight;
-            if(anchoPagina<500)
+            if(anchoPagina<=500)
             {
                 let titulo=document.getElementById('TituloPagina');
                 titulo.style.fontSize='7.5px';
@@ -69,7 +69,7 @@ $(document).ready(function(){
                 bontoncasa.className="fa-solid fa-house-chimney fa-sm";
 
                 let tamlogoIPN=document.getElementById('idLogoIPN');
-                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:70%"></figure>';
+                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:60%"></figure>';
             }
             else
             {
