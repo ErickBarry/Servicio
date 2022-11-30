@@ -66,7 +66,7 @@
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"defer></script> 
     <!-- MaterialDark JS  -->
-	<script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
+	<script src="./../js/main.js"></script>
     
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  

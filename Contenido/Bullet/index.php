@@ -75,7 +75,6 @@
     <script src="./../../js/validetta101/dist/validetta.js" defer></script>
   <script src="./../../js/validetta101/dist/validetta.min.js" defer></script>
   <script src="./../../js/validetta101/localization/validettaLang-es-ES.js" defer></script>
-  <script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
 
 </body>
 </html>
