@@ -1,4 +1,66 @@
 $(document).ready(function(){
+
+        start();
+        window.addEventListener('resize', start);
+
+        function start(){
+            let anchoPagina=document.documentElement.clientWidth;
+            let altoPagina=document.documentElement.clientHeight;
+            if(anchoPagina<=600)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='11.5px';
+            }
+            else if(anchoPagina>600 && anchoPagina<=650)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='14px';
+            }
+            else if(anchoPagina>650 && anchoPagina<=767)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='15px';
+            }
+            else if(anchoPagina>767 && anchoPagina<=800)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='12px';
+            }
+            else if(anchoPagina>800 && anchoPagina<=900)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='13px';
+            }
+            else if(anchoPagina>900 && anchoPagina<=1000)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='14px';
+            }
+            else if(anchoPagina>1000 && anchoPagina<=1100)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='17px';
+            }
+            else if(anchoPagina>1100 && anchoPagina<=1200)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='19px';
+            }
+            else if(anchoPagina>1200 && anchoPagina<=1345)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='21px';
+            }
+            else if(anchoPagina>1345)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='25px';
+            }
+        document.getElementById('SpanID1').innerText = document.documentElement.clientWidth;
+        document.getElementById('SpanID2').innerText = document.documentElement.clientHeight;
+        console.log(document.documentElement.clientWidth);
+        }
+
     //Cambiar el nombre del usuario
 
     $('.NavLateral-DropDown').on('click', function(e){
