@@ -67,8 +67,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"defer></script> 
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./../js/jquery.mCustomScrollbar.concat.min.js"></script>  
-    <!-- MaterialDark JS  -->
-	<script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
+    
     <script>
     $(document).ready(function(){
         $('.collapsible').collapsible();
@@ -78,6 +77,8 @@
     <script src="./../js/validetta101/dist/validetta.js" defer></script>
   <script src="./../js/validetta101/dist/validetta.min.js" defer></script>
   <script src="./../js/validetta101/localization/validettaLang-es-ES.js" defer></script>
+  <!-- MaterialDark JS  -->
+	<script src="https://serviciosocialescom.herokuapp.com/js/main.js"></script>
 <script src="./Financiamiento.js"></script>
 
 </body>
