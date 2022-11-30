@@ -6,10 +6,15 @@ $(document).ready(function(){
         function start(){
             let anchoPagina=document.documentElement.clientWidth;
             let altoPagina=document.documentElement.clientHeight;
-            if(anchoPagina<=600)
+            if(anchoPagina<500)
             {
                 let titulo=document.getElementById('TituloPagina');
-                titulo.style.fontSize='10px';
+                titulo.style.fontSize='9px';
+            }
+            else if(anchoPagina>500&& anchoPagina<=600)
+            {
+                let titulo=document.getElementById('TituloPagina');
+                titulo.style.fontSize='11.5px';
             }
             else if(anchoPagina>600 && anchoPagina<=650)
             {
