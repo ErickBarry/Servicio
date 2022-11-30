@@ -26,7 +26,7 @@ $(document).ready(function(){
                 let titulo=document.getElementById('TituloPagina');
                 titulo.style.fontSize='15px';
             }
-            else if(anchoPagina>767 && anchoPagina<=800)
+            else if(anchoPagina>767 && anchoPagina<=800)//aqui ya aparece el menu lateral completo
             {
                 let titulo=document.getElementById('TituloPagina');
                 titulo.style.fontSize='12px';
@@ -60,6 +60,18 @@ $(document).ready(function(){
             {
                 let titulo=document.getElementById('TituloPagina');
                 titulo.style.fontSize='25px';
+            }
+
+            //Tamaño del boton de inicio
+            if(anchoPagina<=767)
+            {
+                let bontoncasa=document.getElementById('BotonCasa');
+                bontoncasa.className="fa-solid fa-house-chimney fa-sm";
+            }
+            else
+            {
+                let bontoncasa=document.getElementById('BotonCasa');
+                bontoncasa.className="fa-solid fa-house-chimney fa-xl small";
             }
         document.getElementById('SpanID1').innerText = document.documentElement.clientWidth;
         document.getElementById('SpanID2').innerText = document.documentElement.clientHeight;
