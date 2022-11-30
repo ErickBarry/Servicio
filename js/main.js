@@ -85,9 +85,9 @@ $(document).ready(function(){
                 let tamLogoESCOM=document.getElementById('idLogoESCOM');
                 tamLogoESCOM.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoESCOM" style="width:100%"></figure>';
             }
-        document.getElementById('SpanID1').innerText = document.documentElement.clientWidth;
+        /*document.getElementById('SpanID1').innerText = document.documentElement.clientWidth;
         document.getElementById('SpanID2').innerText = document.documentElement.clientHeight;
-        console.log(document.documentElement.clientWidth);
+        console.log(document.documentElement.clientWidth);*/
         }
 
     //Cambiar el nombre del usuario
