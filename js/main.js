@@ -80,7 +80,7 @@ $(document).ready(function(){
                 bontoncasa.className="fa-solid fa-house-chimney fa-xl small";
 
                 let tamlogoIPN=document.getElementById('idLogoIPN');
-                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:150%"></figure>';
+                tamlogoIPN.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:115%"></figure>';
 
                 let tamLogoESCOM=document.getElementById('idLogoESCOM');
                 tamLogoESCOM.innerHTML='<figure><img src="https://serviciosocialescom.herokuapp.com/assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoESCOM" style="width:100%"></figure>';
