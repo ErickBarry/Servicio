@@ -58,10 +58,36 @@
 	<script>window.jQuery || document.write('<script src="./js/jquery-2.2.0.min.js"><\/script>')</script>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    <script>
+     $(document).ready(function(){
+    $('.carousel').carousel({
+        dist:0,
+        shift: 400,
+        duration: 200,
+        numVisible: 2,
+    indicators: false,
+
+    });
+
+    $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true,
+    shift: 0,
+    pressed: false,
+    duration: 200,
+    numVisible: 2,
+    dist:0
+  }); 
+
+    });
+
+
+  </script>
     <!-- Malihu jQuery custom content scroller JS -->
 	<script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>  
     <!-- MaterialDark JS  -->
 	<script src="./js/main.js"></script>
   <script src="./js/index.js"></script>
+  
 </body>
 </html>
