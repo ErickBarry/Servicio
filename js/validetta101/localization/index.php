@@ -1,3 +1,3 @@
 <?php
-    header("Location:https://serviciosocialescom.herokuapp.com/");   
+    header("Location:https://servicioescom.000webhostapp.com/");   
 ?>
