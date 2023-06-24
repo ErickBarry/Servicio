@@ -69,10 +69,10 @@ $(document).ready(function(){
                 bontoncasa.className="fa-solid fa-house-chimney fa-sm";
 
                 let tamlogoIPN=document.getElementById('idLogoIPN');
-                tamlogoIPN.innerHTML='<figure><img src="https://servicioescom.000webhostapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" width:60%></figure>';
+                tamlogoIPN.innerHTML='<figure><img src="https://tablasamortizacion-de97407c87e5.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" width:60%></figure>';
 
                 let tamLogoESCOM=document.getElementById('idLogoESCOM');
-                tamLogoESCOM.innerHTML='<figure><img src="https://servicioescom.000webhostapp.com/assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoESCOM" width="37%"></figure>';
+                tamLogoESCOM.innerHTML='<figure><img src="https://tablasamortizacion-de97407c87e5.herokuapp.com/assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoESCOM" width="37%"></figure>';
             }
             else
             {
@@ -80,10 +80,10 @@ $(document).ready(function(){
                 bontoncasa.className="fa-solid fa-house-chimney fa-xl small";
 
                 let tamlogoIPN=document.getElementById('idLogoIPN');
-                tamlogoIPN.innerHTML='<figure><img src="https://servicioescom.000webhostapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:115%"></figure>';
+                tamlogoIPN.innerHTML='<figure><img src="https://tablasamortizacion-de97407c87e5.herokuapp.com/assets/img/IPNBlancoyNegro.png" class="rensponsive-img"  alt="LogoIPN" style="width:115%"></figure>';
 
                 let tamLogoESCOM=document.getElementById('idLogoESCOM');
-                tamLogoESCOM.innerHTML='<figure><img src="https://servicioescom.000webhostapp.com/assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoESCOM" style="width:100%"></figure>';
+                tamLogoESCOM.innerHTML='<figure><img src="https://tablasamortizacion-de97407c87e5.herokuapp.com/assets/img/escudoESCOM1.png" class="rensponsive-img"  alt="LogoESCOM" style="width:100%"></figure>';
             }
         /*document.getElementById('SpanID1').innerText = document.documentElement.clientWidth;
         document.getElementById('SpanID2').innerText = document.documentElement.clientHeight;

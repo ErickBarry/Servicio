@@ -1,5 +1,5 @@
 <?php
-/*require_once 'https://servicioescom.000webhostapp.com/assets/dompdf/autoload.inc.php';
+/*require_once 'https://tablasamortizacion-de97407c87e5.herokuapp.com/assets/dompdf/autoload.inc.php';
 use Dompdf\Dompdf;
 $dompdf=new Dompdf();
 $options=$dompdf->getOptions();

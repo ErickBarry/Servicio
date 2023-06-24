@@ -1,3 +1,3 @@
 <?php
-    header("Location:https://servicioescom.000webhostapp.com/");   
+    header("Location:https://tablasamortizacion-de97407c87e5.herokuapp.com/");   
 ?>
